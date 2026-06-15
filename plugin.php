@@ -21,7 +21,9 @@ $bricksmateUpdateChecker = PucFactory::buildUpdateChecker(
     __FILE__,
     "bricksmate"
 );
-$bricksmateUpdateChecker->setBranch( "main" );
+// Release mode: updates come from published GitHub Releases and download the
+// attached bricksmate.zip asset (clean folder structure, no manual download).
+$bricksmateUpdateChecker->getVcsApi()->enableReleaseAssets( '/bricksmate\.zip$/i' );
 
 
 // ─────────────────────────────────────────────────────────────────────────────
