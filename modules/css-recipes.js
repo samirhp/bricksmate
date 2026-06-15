@@ -2,7 +2,7 @@
  * BricksMate — CSS Recipes
  *
  * Expande @recipe-name; en los paneles CSS del editor de Bricks.
- * Mecanismo basado en el análisis de AutomaticCSS:
+ * Mecanismo de expansión:
  *  - keydown (no keyup): previene que el ";" se escriba cuando hay expansión
  *  - CodeMirror v4/v5: usa la API nativa .CodeMirror.doc
  *  - Solo procesa el texto antes del cursor, no el contenido completo

@@ -31,8 +31,6 @@ BricksMate design system (dark theme, purple accent).
 * **Expand Children** — expand or collapse an element's entire subtree at once.
 * **Smart Values** — press Enter to turn `--space-m` into `var(--space-m)`, and `var(--x) * 2` into `calc(var(--x) * 2)`.
 
-BricksMate does not require AutomaticCSS — it ships with its own design tokens.
-
 == Installation ==
 
 1. Upload the plugin ZIP via **Plugins → Add New → Upload Plugin**, or copy the
@@ -48,9 +46,6 @@ manual re-upload is needed for future versions.
 
 = Does it require Bricks Builder? =
 Yes. BricksMate runs only inside the Bricks Builder editor (Bricks 2.x, tested with 2.3.7).
-
-= Does it require AutomaticCSS (ACSS)? =
-No. BricksMate uses its own design tokens and works on any Bricks site.
 
 = Where are the settings? =
 Inside the Bricks editor, click the BricksMate icon in the top toolbar. The
