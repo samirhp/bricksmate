@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BricksMate
  * Description: Your personal toolkit for Bricks Builder.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: Samir Haddad
  * Author URI: https://samirh.com/
  * License: GPL v2 or later
@@ -424,7 +424,7 @@ function bricksmate_builder_ui_and_modal() {
         function renderDetail() {
             const m = M[sel];
             detEl.innerHTML =
-                '<div class="bm-detail-head"><div class="bm-detail-title"><span class="bm-ico">' + m.icon + '</span>' + m.label + '</div>' + sw(m.key, m.enabled) + '</div>' +
+                '<div class="bm-detail-head"><div class="bm-detail-title"><span class="bm-ico">' + m.icon + '</span>' + m.label + '</div></div>' +
                 '<p class="bm-detail-desc">' + m.desc + '</p>' +
                 '<div class="bm-detail-label">' + (m.example === '__sidebar__' ? 'Customize' : 'Example') + '</div>' +
                 '<div class="bm-example">' + exampleHTML(m) + '</div>';
@@ -438,14 +438,19 @@ function bricksmate_builder_ui_and_modal() {
         }
 
         listEl.addEventListener('click', (e) => {
-            const cb = e.target.closest('input[data-key]');
-            if (cb) { toggleKey(cb.getAttribute('data-key')); return; }
+            // Toggle: handle the switch click directly (and stop the native toggle +
+            // the row-select that would re-render and swallow the toggle).
+            const swEl = e.target.closest('.bm-switch');
+            if (swEl) {
+                e.preventDefault();
+                const input = swEl.querySelector('input[data-key]');
+                if (input) toggleKey(input.getAttribute('data-key'));
+                return;
+            }
             const it = e.target.closest('[data-idx]');
             if (it) { sel = +it.dataset.idx; render(); }
         });
         detEl.addEventListener('click', (e) => {
-            const cb = e.target.closest('input[data-key]');
-            if (cb) { toggleKey(cb.getAttribute('data-key')); return; }
             const rm = e.target.closest('[data-rm]');
             if (rm) { sbActive = sbActive.filter(n => n !== rm.dataset.rm); renderDetail(); return; }
             const ad = e.target.closest('[data-add]');

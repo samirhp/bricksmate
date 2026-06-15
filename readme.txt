@@ -4,7 +4,7 @@ Tags: bricks, bricks builder, bem, css, design system, page builder
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,10 @@ BricksMate checks its GitHub repository and offers updates straight from the
 WordPress Plugins screen, like any other plugin.
 
 == Changelog ==
+
+= 2.0.1 =
+* Fixed: module toggles in the settings panel's left list now enable/disable correctly.
+* Changed: the detail panel on the right shows only the description and example (the toggle lives in the module list).
 
 = 2.0.0 =
 **The full BricksMate suite.** BricksMate evolves from a single BEM class generator into a complete toolkit for Bricks Builder, with a redesigned settings panel and a design-system look.

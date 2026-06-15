@@ -2,6 +2,14 @@
 
 All notable changes to BricksMate are documented in this file.
 
+## v2.0.1
+
+### Fixed
+- Module toggles in the settings panel's left list now enable/disable correctly.
+
+### Changed
+- The detail panel on the right shows only the description and example (the toggle lives in the module list).
+
 ## v2.0.0 — The full BricksMate suite
 
 BricksMate evolves from a single BEM class generator into a complete toolkit
