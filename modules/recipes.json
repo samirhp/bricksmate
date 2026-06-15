@@ -1,0 +1,27 @@
+{
+  "clickable-parent": {
+    "label": "Clickable Parent",
+    "description": "Makes the whole card clickable through its child link. Place it on the parent element.",
+    "css": "%root%:has(a) {\n\tposition: relative;\n}\n%root% a::after {\n\tcontent: \"\";\n\tposition: absolute;\n\tinset: 0;\n\tz-index: 10;\n}\n.target %root% a::after {\n\tcontent: \"\";\n\tposition: relative;\n}"
+  },
+  "focus-parent": {
+    "label": "Focus Parent",
+    "description": "Moves the focus ring to the parent element and suppresses the child's.",
+    "css": "%root%:focus-within:not(:has(:focus-visible)) {\n\toutline: none;\n\toutline-offset: 0;\n\tbox-shadow: none;\n}\n%root%:focus-within {\n\toutline: var(--focus-width) solid var(--focus-color);\n\toutline-offset: var(--focus-offset);\n}\n%root% :focus {\n\toutline: none !important;\n\tbox-shadow: none !important;\n}"
+  },
+  "list-none": {
+    "label": "List None",
+    "description": "Removes all native list styles (bullets, padding, margin).",
+    "css": "%root% {\n\tlist-style: none;\n\tpadding-inline-start: 0;\n\tmargin-block: 0;\n}"
+  },
+  "line-clamp": {
+    "label": "Line Clamp",
+    "description": "Truncates text to N lines with an ellipsis. Change --line-count to adjust.",
+    "css": "%root% {\n\t--line-count: 3;\n\tdisplay: -webkit-box;\n\t-webkit-line-clamp: var(--line-count);\n\t-webkit-box-orient: vertical;\n\toverflow: hidden;\n}"
+  },
+  "columns": {
+    "label": "Columns",
+    "description": "Auto-responsive CSS columns with configurable tokens.",
+    "css": "%root% {\n\t--col-count: auto;\n\t--col-min-width: 250px;\n\t--col-rule-style: solid;\n\t--col-rule-width: 1px;\n\t--col-rule-color: var(--black);\n\t--col-gap: var(--grid-gap);\n\t--row-gap: var(--grid-gap);\n}\n\n%root% {\n\tdisplay: block !important;\n\tcolumns: var(--col-count) var(--col-min-width);\n\tcolumn-rule-style: var(--col-rule-style);\n\tcolumn-rule-width: var(--col-rule-width);\n\tcolumn-rule-color: var(--col-rule-color);\n\tgap: var(--col-gap);\n}\n\n%root% > * {\n\tbreak-inside: avoid;\n\tmargin-block-end: var(--row-gap);\n}"
+  }
+}

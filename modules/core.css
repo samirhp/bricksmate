@@ -1,0 +1,104 @@
+/**
+ * BricksMate — Core Design Tokens
+ *
+ * Fuente ÚNICA de verdad del sistema de diseño del plugin. Se enrola siempre
+ * dentro del builder (desde bricksmate_enqueue_main), independientemente de qué
+ * módulos estén activos, para que cualquier estilo del plugin pueda consumir
+ * estas variables.
+ *
+ * Convención: todo token del plugin usa el prefijo `--bm-`.
+ * Los tokens legacy `--bbem-*` (panel BEM) derivan de estos en style.css.
+ */
+:root {
+  /* Paleta alineada con la app del Design System (tema oscuro). */
+
+  /* ── Color: superficies ─────────────────────────────────────────────── */
+  --bm-color-bg:            #121212; /* fondo principal de paneles (DS bg-card) */
+  --bm-color-bg-elevated:   #1c1c1c; /* cabeceras, filas, toasts */
+  --bm-color-input-bg:      #1c1c1c; /* fondo de inputs */
+  --bm-color-input-focus:   #2a2a2a; /* input/elemento en foco */
+
+  /* ── Color: bordes ──────────────────────────────────────────────────── */
+  --bm-color-border:        #383838; /* borde estándar (DS border) */
+  --bm-color-border-subtle: #222222; /* borde tenue (DS border-light) */
+
+  /* ── Color: texto ───────────────────────────────────────────────────── */
+  --bm-color-text:          #fafafa; /* texto principal (DS text) */
+  --bm-color-text-soft:     #b3b3b3; /* texto secundario (DS text-2) */
+  --bm-color-text-muted:    #808080; /* etiquetas / iconos inactivos (DS text-3) */
+
+  /* ── Color: acento ──────────────────────────────────────────────────── */
+  --bm-color-accent:        #755cf5; /* morado de marca (DS accent) */
+  --bm-color-accent-hover:  #927ef7; /* morado hover (DS dark) */
+  --bm-color-accent-soft:   #221c40; /* fondo acento sutil (DS accent-light dark) */
+
+  /* ── Color: estado / semánticos ─────────────────────────────────────── */
+  --bm-color-error:         #f15f5f; /* DS error (dark) */
+  --bm-color-error-soft:    #f15f5f;
+  --bm-color-tag:           #3ee07d; /* badge de etiqueta HTML (verde, alto contraste) */
+  --bm-color-tag-soft:      rgba(48, 217, 110, 0.16);
+  --bm-color-modifier:      #e5c07b; /* modificador BEM (semántico propio) */
+  --bm-color-indicator-class: #3b82f6; /* indicador "tiene clase" */
+  --bm-color-indicator-id:    #ef4444; /* indicador "estilos en ID" */
+
+  /* ── Radios (DS: 4–5px) ─────────────────────────────────────────────── */
+  --bm-radius-sm: 4px; /* inputs y elementos pequeños */
+  --bm-radius-md: 6px; /* paneles, dropdowns */
+
+  /* ── Espaciado ──────────────────────────────────────────────────────── */
+  --bm-space-xs:  4px;
+  --bm-space-sm:  8px;
+  --bm-space-md:  12px;
+  --bm-space-lg:  15px;
+
+  /* ── Transiciones ───────────────────────────────────────────────────── */
+  --bm-transition-fast:   0.15s ease;
+  --bm-transition-normal: 0.2s ease;
+
+  /* ── Sombras ────────────────────────────────────────────────────────── */
+  --bm-shadow-panel:   0 15px 40px rgba(0, 0, 0, 0.5);
+  --bm-shadow-dropdown:0 10px 25px rgba(0, 0, 0, 0.5);
+
+  /* ── Tipografía ─────────────────────────────────────────────────────── */
+  --bm-font-ui:   Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  --bm-font-mono: "SF Mono", Consolas, "Fira Code", monospace;
+}
+
+/* ── Accesibilidad: anillo de foco unificado para controles del plugin ──── */
+.bm-topbar-icon:focus-visible,
+.bm-expand-btn:focus-visible,
+.bm-export-btn:focus-visible,
+.bm-tag-btn:focus-visible,
+.bbem-shortcut-btn:focus-visible,
+.bbem-trigger-btn:focus-visible,
+.bbem-text-toggle:focus-visible,
+.bbem-btn:focus-visible {
+  outline: 2px solid var(--bm-color-accent);
+  outline-offset: 2px;
+  border-radius: var(--bm-radius-sm);
+}
+
+/* ── Micro-interacciones: feedback de pulsación (sin desplazar el layout) ── */
+.bm-topbar-icon:active,
+.bm-expand-btn:active,
+.bm-export-btn:active,
+.bm-tag-btn:active,
+.bbem-shortcut-btn:active,
+.bbem-trigger-btn:active,
+.bbem-btn:active {
+  transform: scale(0.9);
+  transition: transform var(--bm-transition-fast);
+}
+
+/* ── Estados deshabilitados unificados ───────────────────────────────────── */
+.bm-tag-btn:disabled,
+.bm-tag-btn[disabled],
+.bm-tag-btn.bm-disabled,
+.bbem-btn:disabled,
+.bbem-btn[disabled],
+.bbem-text-toggle:disabled,
+.bbem-text-toggle[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

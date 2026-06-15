@@ -1,15 +1,16 @@
+/* Tokens legacy del panel BEM: derivan de los tokens centrales --bm-* (core.css). */
 :root {
-  --bbem-bg: #161a1d;
-  --bbem-header: #161a1d;
-  --bbem-border: #3d4752;
-  --bbem-text: #e1e1e1;
-  --bbem-label: #8a8d95;
-  --bbem-accent: #e2b93b;
-  --bbem-accent-hover: #ffd042;
-  --bbem-input-bg: #293038;
-  --bbem-input-border: #3d4752;
-  --bbem-mod-color: #e5c07b;
-  --bbem-error: #ff4c4c;
+  --bbem-bg:           var(--bm-color-bg);
+  --bbem-header:       var(--bm-color-bg);
+  --bbem-border:       var(--bm-color-border);
+  --bbem-text:         var(--bm-color-text);
+  --bbem-label:        var(--bm-color-text-muted);
+  --bbem-accent:       var(--bm-color-accent);
+  --bbem-accent-hover: var(--bm-color-accent-hover);
+  --bbem-input-bg:     var(--bm-color-input-bg);
+  --bbem-input-border: var(--bm-color-border);
+  --bbem-mod-color:    var(--bm-color-modifier);
+  --bbem-error:        var(--bm-color-error);
 }
 
 .bbem-draggable-panel {
@@ -22,7 +23,11 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   color: var(--bbem-text);
   font-size: 12px;
   opacity: 0;
@@ -233,7 +238,7 @@ input:checked + .bbem-slider:before {
   opacity: 0.4;
 }
 
-.bbem-row.disabled .bbem-input, 
+.bbem-row.disabled .bbem-input,
 .bbem-row.disabled .bbem-class-wrapper {
   pointer-events: none;
 }
@@ -398,6 +403,7 @@ input:checked + .bbem-slider:before {
   cursor: pointer;
   position: relative;
   transition: all 0.1s;
+  padding: 0;
 }
 
 .bbem-include-checkbox:checked {
@@ -429,7 +435,7 @@ input:checked + .bbem-slider:before {
   border-bottom-right-radius: 4px;
 }
 
-.bbem-footer-left, 
+.bbem-footer-left,
 .bbem-footer-right {
   display: flex;
   align-items: center;
@@ -470,6 +476,7 @@ input:checked + .bbem-slider:before {
 .bbem-trigger-btn {
   display: inline-flex;
   align-items: center;
+  list-style: none;
   margin: 0 4px;
   color: #888;
   font-size: 9px;
@@ -494,13 +501,16 @@ input:checked + .bbem-slider:before {
 }
 
 @keyframes bbemShake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  20%, 60% {
+  20%,
+  60% {
     transform: translateX(-4px);
   }
-  40%, 80% {
+  40%,
+  80% {
     transform: translateX(4px);
   }
 }
@@ -519,16 +529,16 @@ li[data-id] .bbem-trigger-btn {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  transition: opacity 0.10s ease;
+  transition: opacity 0.1s ease;
 }
 
 /* ======= EL FIX ANTI-BURBUJA ESTÁ AQUÍ ======= */
-/* Movimos el :hover al hijo directo (> div), así solo se enciende si el ratón 
+/* Movimos el :hover al hijo directo (> div), así solo se enciende si el ratón
    está sobre la propia fila de texto, y no sobre las sub-listas (hijos) */
 li[data-id] > div:hover .bbem-trigger-btn {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .bbem-select {

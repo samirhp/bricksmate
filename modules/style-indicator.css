@@ -1,0 +1,19 @@
+/**
+ * BricksMate — Style Indicator (estilos)
+ * Consume los tokens --bm-* de core.css.
+ */
+#bricks-structure li[data-id] > div { position: relative; }
+#bricks-structure li[data-id] > div.bbem-style-class::before,
+#bricks-structure li[data-id] > div.bbem-style-both::before {
+    content: ""; position: absolute; top: 0; left: 0; bottom: 0;
+    width: 3px; background-color: var(--bm-color-indicator-class);
+    border-top-left-radius: var(--bm-radius-sm); border-bottom-left-radius: var(--bm-radius-sm);
+    z-index: inherit; pointer-events: none;
+}
+#bricks-structure li[data-id] > div.bbem-style-id::after,
+#bricks-structure li[data-id] > div.bbem-style-both::after {
+    content: ""; position: absolute; top: 0; right: 0; bottom: 0;
+    width: 3px; background-color: var(--bm-color-indicator-id);
+    border-top-right-radius: var(--bm-radius-sm); border-bottom-right-radius: var(--bm-radius-sm);
+    z-index: inherit; pointer-events: none;
+}

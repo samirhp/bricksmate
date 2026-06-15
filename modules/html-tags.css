@@ -1,0 +1,34 @@
+/**
+ * BricksMate — HTML Tags Manager (estilos)
+ * Consume los tokens --bm-* de core.css.
+ */
+.bm-tag-btn-wrapper { display: flex; align-items: center; margin-left: 0 !important; margin-right: 6px; z-index: inherit; }
+/* Todos los badges con el color de acento del DS (unificados). */
+.bm-tag-btn {
+    font-size: 9px !important; font-weight: 700; text-transform: uppercase;
+    padding: 4px 6px !important; border-radius: var(--bm-radius-sm); cursor: pointer;
+    background-color: var(--bm-color-tag-soft) !important; color: var(--bm-color-tag) !important; transition: all var(--bm-transition-normal);
+    border: 1px solid transparent; min-width: 20px; line-height: 1.2 !important;
+    font-family: var(--bm-font-mono); margin: 0 !important;
+}
+.bm-tag-btn:hover { background-color: var(--bm-color-tag) !important; border-color: var(--bm-color-tag); color: #0a0a0a !important; }
+@keyframes bm-shake {
+    0%,100% { transform: translateX(0); }
+    25%      { transform: translateX(-4px); }
+    75%      { transform: translateX(4px); }
+}
+.bm-tag-dropdown {
+    position: fixed; background: var(--bm-color-bg); border: 1px solid var(--bm-color-border);
+    border-radius: var(--bm-radius-md); z-index: 999999; width: 140px;
+    max-height: 280px; overflow-y: auto;
+    box-shadow: var(--bm-shadow-dropdown);
+    display: flex; flex-direction: column; padding: 4px 0; font-family: inherit;
+}
+.bm-tag-dropdown-item {
+    padding: 6px 12px; font-size: 11px; color: var(--bm-color-text-soft);
+    cursor: pointer; transition: background .1s;
+    text-transform: lowercase; font-family: var(--bm-font-mono);
+}
+.bm-tag-dropdown-item:hover { background: var(--bm-color-accent-soft); color: var(--bm-color-accent); font-weight: bold; }
+.bm-tag-dropdown::-webkit-scrollbar { width: 4px; }
+.bm-tag-dropdown::-webkit-scrollbar-thumb { background: var(--bm-color-border); border-radius: var(--bm-radius-md); }

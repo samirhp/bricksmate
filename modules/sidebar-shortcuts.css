@@ -1,0 +1,38 @@
+/**
+ * BricksMate — Sidebar Shortcuts (styles)
+ * Rail intentionally blends with the NATIVE Bricks structure panel (transparent
+ * background, neutral hover) and uses Bricks' themify glyphs for the icons, so it
+ * looks like part of Bricks rather than the DS-themed panels.
+ */
+.bbem-shortcuts-bar {
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 38px; background-color: transparent; border-left: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; flex-direction: column; align-items: center;
+    padding-top: 60px; gap: 8px; z-index: 999; overflow-y: auto;
+}
+.bbem-shortcuts-bar::-webkit-scrollbar { display: none; }
+.bbem-shortcut-btn {
+    width: 28px; height: 28px; display: flex; align-items: center;
+    justify-content: center; cursor: pointer; border-radius: 4px;
+    transition: all 0.15s ease; color: rgba(255, 255, 255, 0.5); flex-shrink: 0;
+}
+.bbem-shortcut-btn:hover { background-color: rgba(255, 255, 255, 0.08); color: #fff; }
+
+/* Themify glyphs (native Bricks element icons) */
+.bbem-shortcut-btn i {
+    font-family: "themify" !important; font-style: normal !important;
+    font-weight: 400 !important; font-size: 14px; speak: never;
+    -webkit-font-smoothing: antialiased; display: inline-block;
+}
+.bbem-ti-section::before    { content: "\e713" !important; }
+.bbem-ti-container::before  { content: "\e6e9" !important; }
+.bbem-ti-block::before      { content: "\e6e8" !important; }
+.bbem-ti-div::before        { content: "\e6ea" !important; }
+.bbem-ti-heading::before    { content: "\e672" !important; }
+.bbem-ti-text-basic::before { content: "\e6c3" !important; }
+.bbem-ti-button::before     { content: "\e6ab" !important; }
+.bbem-ti-icon::before       { content: "\e60a" !important; }
+.bbem-ti-image::before      { content: "\e633" !important; }
+
+/* Inline-SVG fallback for elements without a native glyph */
+.bbem-shortcut-btn svg { width: 16px; height: 16px; display: block; }
