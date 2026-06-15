@@ -139,10 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 } catch (e) { /* continuar */ }
             }
 
-            // ¿Hay estilos pegados directamente en el ID?
-            if (Object.keys(el.settings).some(k => !CONTENT_BLACKLIST.includes(k))) {
-                showActionSelect = true;
-            }
+            // Nota: el desplegable solo aparece si YA existen clases CSS (arriba).
+            // No se muestra solo por tener estilos en el ID (creación desde cero).
         });
 
         const panel = document.createElement('div');
@@ -523,11 +521,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (shouldCloneOld) {
                 const firstOldClassObj = state.globalClasses.find(gc => gc.id === oldClassIds[0]);
                 if (firstOldClassObj?.settings) {
+                    const oldName = firstOldClassObj.name;
                     // Mutar clave por clave sobre el objeto settings existente (mismo
-                    // patrón que 'copy-id', que es el que aplica los estilos de forma
-                    // fiable) en lugar de reemplazar el objeto entero.
+                    // patrón que 'copy-id', que es el que aplica los estilos de forma fiable).
                     Object.keys(firstOldClassObj.settings).forEach(key => {
-                        newGlobalClass.settings[key] = JSON.parse(JSON.stringify(firstOldClassObj.settings[key]));
+                        let val = JSON.parse(JSON.stringify(firstOldClassObj.settings[key]));
+                        // El CSS personalizado (_cssCustom) lleva el selector literal de la
+                        // clase antigua (p.ej. ".section {…}"); lo reescribimos al nombre de la
+                        // clase nueva para que siga aplicando. (%root% se deja intacto.)
+                        if (key === '_cssCustom' && typeof val === 'string' && oldName) {
+                            const esc = oldName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                            val = val.replace(new RegExp('\\.' + esc + '(?![\\w-])', 'g'), '.' + finalClassName);
+                        }
+                        newGlobalClass.settings[key] = val;
                     });
                 }
             }

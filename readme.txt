@@ -4,7 +4,7 @@ Tags: bricks, bricks builder, bem, css, design system, page builder
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,10 @@ BricksMate checks its GitHub repository and offers updates straight from the
 WordPress Plugins screen, like any other plugin.
 
 == Changelog ==
+
+= 2.0.2 =
+* Fixed: in the BEM Generator, the action dropdown (rename / create new & remove old, etc.) now appears only when the element already has CSS classes, not when creating classes for the first time.
+* Fixed: "Copy styles" now also copies a class's custom CSS, rewriting its selector to the new class so it keeps applying.
 
 = 2.0.1 =
 * Fixed: module toggles in the settings panel's left list now enable/disable correctly.

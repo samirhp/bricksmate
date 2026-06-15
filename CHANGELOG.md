@@ -2,6 +2,12 @@
 
 All notable changes to BricksMate are documented in this file.
 
+## v2.0.2
+
+### Fixed
+- BEM Generator: the action dropdown (rename / create new & remove old, etc.) now appears only when the element already has CSS classes — not when creating classes for the first time.
+- "Copy styles" now also copies a class's custom CSS, rewriting its selector to the new class so it keeps applying.
+
 ## v2.0.1
 
 ### Fixed

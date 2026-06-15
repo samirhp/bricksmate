@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BricksMate
  * Description: Your personal toolkit for Bricks Builder.
- * Version: 2.0.1
+ * Version: 2.0.2
  * Author: Samir Haddad
  * Author URI: https://samirh.com/
  * License: GPL v2 or later
