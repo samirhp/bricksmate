@@ -317,6 +317,17 @@ function bricksmate_builder_ui_and_modal() {
         .bm-topbar-icon { cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 12px; color:var(--bm-color-text-muted); transition:var(--bm-transition-normal); }
         .bm-topbar-icon:hover { color:var(--bm-color-text); }
         .bm-topbar-icon svg { display:block; }
+        /* design polish */
+        .bm-list::-webkit-scrollbar, .bm-detail::-webkit-scrollbar { width:6px; }
+        .bm-list::-webkit-scrollbar-thumb, .bm-detail::-webkit-scrollbar-thumb { background:#3a3a3a; border-radius:6px; }
+        .bm-list::-webkit-scrollbar-track, .bm-detail::-webkit-scrollbar-track { background:transparent; }
+        .bm-item.bm-sel { background:rgba(117,92,245,.10); border-color:transparent; }
+        .bm-item.bm-sel .bm-name { font-weight:500; }
+        .bm-detail-head { padding-bottom:12px; margin-bottom:14px; border-bottom:1px solid var(--bm-color-border-subtle); }
+        .bm-detail-desc { max-width:52ch; line-height:1.65; }
+        .bm-detail-label { letter-spacing:.7px; }
+        .bm-detail-label::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--bm-color-accent); margin-right:7px; vertical-align:middle; }
+        .bm-count { font-size:10px; font-weight:600; color:var(--bm-color-accent); background:var(--bm-color-accent-soft); padding:3px 9px; border-radius:20px; }
     </style>
 
     <div id="bm-settings-panel">
@@ -350,7 +361,7 @@ function bricksmate_builder_ui_and_modal() {
             <span class="bm-promo-txt"><b>BricksMate DS</b><span>Create your design system &rarr;</span></span>
         </a>
         <div class="bm-panel-footer">
-            <span class="bm-count"><b id="bm-count">0</b> active modules</span>
+            <span class="bm-count"><b id="bm-count">0</b> active</span>
             <button class="bm-save-btn" id="bm-save-settings">Save &amp; reload</button>
         </div>
     </div>
