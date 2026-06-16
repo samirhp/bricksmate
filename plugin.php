@@ -173,7 +173,7 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'bem_generator', 'label' => 'BEM Generator',
             'icon' => $i( '<path d="M8 4c-2 0-3 1-3 3v2c0 1-1 2-2 2 1 0 2 1 2 2v2c0 2 1 3 3 3"/><path d="M16 4c2 0 3 1 3 3v2c0 1 1 2 2 2-1 0-2 1-2 2v2c0 2-1 3-3 3"/>' ),
             'desc' => 'Generate and rename CSS classes with BEM naming (block__element--modifier) in bulk, right from the structure panel.',
-            'example' => '<div style="display:flex;align-items:center;gap:8px;' . $mono . '"><span style="color:var(--bm-color-text-muted);">card</span><span style="color:var(--bm-color-accent);">__title</span><span style="color:var(--bm-color-modifier);">--active</span></div><div style="margin-top:10px;font-size:11px;color:var(--bm-color-text-muted);">Rename several elements at once and sync their labels.</div>',
+            'example' => '<div class="bm-ex"><div class="bm-ex-row"><span class="bm-ex-in">card</span><span class="bm-ex-out">__title</span><span class="bm-ex-mod">--active</span></div></div>',
         ],
         [
             'key' => 'style_indicator', 'label' => 'Style Indicators',
@@ -197,13 +197,13 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'auto_select_class', 'label' => 'Auto-Select Class',
             'icon' => $i( '<path d="M4 4l7 16 2-6 6-2z"/>' ),
             'desc' => "When you create or rename a class, it's selected automatically so you can keep styling without extra clicks.",
-            'example' => '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;"><span style="' . $mono . 'background:var(--bm-color-accent-soft);border:1px solid var(--bm-color-accent);color:var(--bm-color-accent);padding:3px 6px;border-radius:4px;font-size:10px;">.hero__title</span><span style="color:var(--bm-color-text-muted);">→</span><span style="font-size:11px;color:var(--bm-color-text-soft);">selected instantly</span></div>',
+            'example' => '<div class="bm-ex"><div class="bm-ex-row"><div class="bm-ex-col"><span class="bm-ex-cap">Create</span><span class="bm-ex-in">.hero__title</span></div><span class="bm-ex-arrow">→</span><div class="bm-ex-col"><span class="bm-ex-cap">State</span><span class="bm-ex-out">selected</span></div></div></div>',
         ],
         [
             'key' => 'export_id_to_class', 'label' => 'Export ID Styles to Class',
             'icon' => $i( '<path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/>' ),
             'desc' => "Moves the styles applied to the element's ID over to its first global CSS class, in a single click.",
-            'example' => '<div style="display:flex;align-items:center;gap:10px;' . $mono . '"><div style="background:var(--bm-color-bg);border:1px solid var(--bm-color-border-subtle);border-radius:6px;padding:6px 10px;color:var(--bm-color-text-muted);">#id<br><span style="color:var(--bm-color-text-soft);">padding</span></div><span style="color:var(--bm-color-accent);font-size:18px;">→</span><div style="background:var(--bm-color-accent-soft);border:1px solid var(--bm-color-accent);border-radius:6px;padding:6px 10px;color:var(--bm-color-accent);">.card<br><span style="color:var(--bm-color-text);">padding</span></div></div>',
+            'example' => '<div class="bm-ex"><div class="bm-ex-row"><div class="bm-ex-col"><span class="bm-ex-cap">Before</span><span class="bm-ex-in">#id { padding }</span></div><span class="bm-ex-arrow">→</span><div class="bm-ex-col"><span class="bm-ex-cap">After</span><span class="bm-ex-out">.card { padding }</span></div></div></div>',
         ],
         [
             'key' => 'css_recipes', 'label' => 'CSS Recipes',
@@ -221,7 +221,7 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'smart_values', 'label' => 'Smart Values',
             'icon' => $i( '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M18 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>' ),
             'desc' => 'Press Enter and --space-m becomes var(--space-m); an operation like var(--x) * 2 is wrapped in calc(...).',
-            'example' => '<div style="' . $mono . 'display:flex;flex-direction:column;gap:8px;"><div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--bm-color-text-muted);">--space-m</span><span style="color:var(--bm-color-accent);">⏎</span><span style="color:var(--bm-color-accent);">var(--space-m)</span></div><div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--bm-color-text-muted);">--x * 2</span><span style="color:var(--bm-color-accent);">⏎</span><span style="color:var(--bm-color-accent);">calc(--x * 2)</span></div></div>',
+            'example' => '<div class="bm-ex"><div class="bm-ex-row"><div class="bm-ex-col"><span class="bm-ex-cap">Type</span><span class="bm-ex-in">--space-m</span></div><span class="bm-ex-arrow">→</span><div class="bm-ex-col"><span class="bm-ex-cap">Result</span><span class="bm-ex-out">var(--space-m)</span></div></div><div class="bm-ex-row"><div class="bm-ex-col"><span class="bm-ex-cap">Type</span><span class="bm-ex-in">--x * 2</span></div><span class="bm-ex-arrow">→</span><div class="bm-ex-col"><span class="bm-ex-cap">Result</span><span class="bm-ex-out">calc(--x * 2)</span></div></div></div>',
         ],
     ];
 
@@ -328,6 +328,15 @@ function bricksmate_builder_ui_and_modal() {
         .bm-detail-label { letter-spacing:.7px; }
         .bm-detail-label::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--bm-color-accent); margin-right:7px; vertical-align:middle; }
         .bm-count { font-size:10px; font-weight:600; color:var(--bm-color-accent); background:var(--bm-color-accent-soft); padding:3px 9px; border-radius:20px; }
+        /* unified example grammar */
+        .bm-ex { font-family:var(--bm-font-mono); font-size:12px; display:flex; flex-direction:column; gap:12px; }
+        .bm-ex-row { display:flex; align-items:flex-end; gap:12px; flex-wrap:wrap; }
+        .bm-ex-col { display:flex; flex-direction:column; gap:4px; }
+        .bm-ex-cap { font-family:var(--bm-font-ui); font-size:9px; text-transform:uppercase; letter-spacing:.6px; color:#6a6a6a; }
+        .bm-ex-in { color:var(--bm-color-text-muted); }
+        .bm-ex-out { color:#a99cf8; }
+        .bm-ex-mod { color:var(--bm-color-modifier); }
+        .bm-ex-arrow { color:#5a5a5a; padding-bottom:1px; }
     </style>
 
     <div id="bm-settings-panel">
