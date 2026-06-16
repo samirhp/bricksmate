@@ -167,13 +167,12 @@ function bricksmate_builder_ui_and_modal() {
 
     // Module metadata (single source of truth for the panel).
     $i = function ( $p ) { return bricksmate_svg( $p ); };
-    $mono = 'font-family:var(--bm-font-mono);font-size:12px;';
     $modules = [
         [
             'key' => 'bem_generator', 'label' => 'BEM Generator',
             'icon' => $i( '<path d="M8 4c-2 0-3 1-3 3v2c0 1-1 2-2 2 1 0 2 1 2 2v2c0 2 1 3 3 3"/><path d="M16 4c2 0 3 1 3 3v2c0 1 1 2 2 2-1 0-2 1-2 2v2c0 2-1 3-3 3"/>' ),
             'desc' => 'Generate and rename CSS classes with BEM naming (block__element--modifier) in bulk, right from the structure panel.',
-            'example' => '<div class="bm-ex"><div class="bm-ex-row"><span class="bm-ex-in">card</span><span class="bm-ex-out">__title</span><span class="bm-ex-mod">--active</span></div></div>',
+            'example' => '<div class="bm-tree"><div class="bm-tree-row"><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="10" rx="2"/></svg></span><span class="bm-tree-in">card</span><span class="bm-tree-role">block</span></div><div class="bm-tree-row" style="margin-left:16px;"><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M6 12h12"/></svg></span><span class="bm-tree-in">card</span><span class="bm-tree-el">__title</span><span class="bm-tree-role">element</span></div><div class="bm-tree-row" style="margin-left:16px;"><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5L5 20"/></svg></span><span class="bm-tree-in">card</span><span class="bm-tree-el">__media</span><span class="bm-tree-role">element</span></div><div class="bm-tree-row" style="margin-left:32px;"><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"/></svg></span><span class="bm-tree-in">card</span><span class="bm-tree-el">__cta</span><span class="bm-tree-mod">--active</span><span class="bm-tree-role">modifier</span></div></div>',
         ],
         [
             'key' => 'style_indicator', 'label' => 'Style Indicators',
@@ -191,13 +190,13 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'html_tags', 'label' => 'HTML Tags',
             'icon' => $i( '<polyline points="16 8 20 12 16 16"/><polyline points="8 8 4 12 8 16"/>' ),
             'desc' => "Change an element's semantic HTML tag (section, article, ul, nav…) directly from the structure panel.",
-            'example' => '<div style="display:flex;gap:10px;align-items:flex-start;"><span style="' . $mono . 'background:var(--bm-color-accent-soft);color:var(--bm-color-accent);padding:3px 6px;border-radius:4px;font-size:10px;">SECTION</span><div style="background:var(--bm-color-bg);border:1px solid var(--bm-color-border-subtle);border-radius:6px;padding:5px 0;' . $mono . 'font-size:11px;color:var(--bm-color-text-soft);min-width:84px;"><div style="padding:4px 12px;background:var(--bm-color-accent-soft);color:var(--bm-color-accent);">section</div><div style="padding:4px 12px;">article</div><div style="padding:4px 12px;">nav</div></div></div>',
+            'example' => '<div class="bm-tree"><div class="bm-tree-row"><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><span class="bm-tree-badge">SECTION</span><span class="bm-tree-name">Section</span></div><div class="bm-tree-row" style="margin-left:16px;"><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span><span class="bm-tree-badge">DIV</span><span class="bm-tree-name">Container</span></div><div class="bm-tree-row" style="margin-left:32px;"><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M6 12h12"/></svg></span><span class="bm-tree-badge">H3</span><span class="bm-tree-name">Heading</span></div></div>',
         ],
         [
             'key' => 'auto_select_class', 'label' => 'Auto-Select Class',
             'icon' => $i( '<path d="M4 4l7 16 2-6 6-2z"/>' ),
             'desc' => "When you create or rename a class, it's selected automatically so you can keep styling without extra clicks.",
-            'example' => '<div class="bm-ex"><div class="bm-ex-row"><div class="bm-ex-col"><span class="bm-ex-cap">Create</span><span class="bm-ex-in">.hero__title</span></div><span class="bm-ex-arrow">→</span><div class="bm-ex-col"><span class="bm-ex-cap">State</span><span class="bm-ex-out">selected</span></div></div></div>',
+            'example' => '<div class="bm-ex"><div style="display:flex;align-items:center;gap:8px;border:1px solid var(--bm-color-border);border-radius:6px;padding:7px 9px;background:var(--bm-color-bg);"><span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:var(--bm-color-accent);color:#fff;">.card</span><span style="margin-left:auto;display:flex;gap:10px;color:#5f5f5f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l7 16 2-6 6-2z"/></svg></span></div><span style="align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--bm-color-accent-soft);color:#a99cf8;">.card</span></div>',
         ],
         [
             'key' => 'export_id_to_class', 'label' => 'Export ID Styles to Class',
@@ -215,7 +214,7 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'expand_children', 'label' => 'Expand Children',
             'icon' => $i( '<rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/>' ),
             'desc' => 'Adds a button on every element with children to expand or collapse its whole subtree at once.',
-            'example' => '<div style="font-size:12px;color:var(--bm-color-text-soft);' . $mono . 'line-height:1.7;"><div>▾ Section</div><div style="padding-left:14px;">▾ Container</div><div style="padding-left:28px;color:var(--bm-color-text-muted);">H1 · Text · Button</div></div>',
+            'example' => '<div class="bm-tree"><div class="bm-tree-row"><span class="bm-tree-chev">▾</span><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><span class="bm-tree-name">Section</span><span class="bm-tree-expand"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 1 13 1 13 5"/><line x1="13" y1="1" x2="8" y2="6"/><polyline points="5 13 1 13 1 9"/><line x1="1" y1="13" x2="6" y2="8"/></svg></span></div><div class="bm-tree-row" style="margin-left:16px;"><span class="bm-tree-chev">▾</span><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></span><span class="bm-tree-name">Container</span></div><div class="bm-tree-row" style="margin-left:32px;"><span class="bm-tree-chev"></span><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M6 12h12"/></svg></span><span class="bm-tree-name">Heading</span></div><div class="bm-tree-row" style="margin-left:32px;"><span class="bm-tree-chev"></span><span class="bm-tree-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"/></svg></span><span class="bm-tree-name">Button</span></div></div>',
         ],
         [
             'key' => 'smart_values', 'label' => 'Smart Values',
@@ -338,6 +337,20 @@ function bricksmate_builder_ui_and_modal() {
         .bm-ex-out { color:#a99cf8; }
         .bm-ex-mod { color:var(--bm-color-modifier); }
         .bm-ex-arrow { color:#5a5a5a; padding-bottom:1px; }
+        /* tree-style examples (BEM, HTML Tags, Expand Children) */
+        .bm-tree { display:flex; flex-direction:column; gap:4px; font-family:var(--bm-font-mono); font-size:12px; }
+        .bm-tree-row { display:flex; align-items:center; gap:8px; padding:6px 9px; border:1px solid #2a2a2a; border-radius:5px; background:#161616; }
+        .bm-tree-i { width:14px; height:14px; flex-shrink:0; color:#6a6a6a; display:flex; }
+        .bm-tree-i svg { width:14px; height:14px; display:block; }
+        .bm-tree-chev { width:12px; flex-shrink:0; color:var(--bm-color-text-muted); }
+        .bm-tree-name { color:var(--bm-color-text-soft); }
+        .bm-tree-in { color:var(--bm-color-text-muted); }
+        .bm-tree-el { color:#a99cf8; }
+        .bm-tree-mod { color:var(--bm-color-modifier); }
+        .bm-tree-badge { font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; background:var(--bm-color-tag-soft); color:var(--bm-color-tag); letter-spacing:.3px; }
+        .bm-tree-role { margin-left:auto; font-family:var(--bm-font-ui); font-size:9px; text-transform:uppercase; letter-spacing:.5px; color:#5f5f5f; }
+        .bm-tree-expand { margin-left:auto; color:var(--bm-color-accent); display:flex; }
+        .bm-tree-expand svg { width:13px; height:13px; display:block; }
     </style>
 
     <div id="bm-settings-panel">
