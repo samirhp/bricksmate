@@ -318,6 +318,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-topbar-icon:hover { color:var(--bm-color-text); }
         .bm-topbar-icon svg { display:block; }
         /* design polish */
+        .bm-list, .bm-detail { scrollbar-width: thin; scrollbar-color: #3a3a3a transparent; }
         .bm-list::-webkit-scrollbar, .bm-detail::-webkit-scrollbar { width:6px; }
         .bm-list::-webkit-scrollbar-thumb, .bm-detail::-webkit-scrollbar-thumb { background:#3a3a3a; border-radius:6px; }
         .bm-list::-webkit-scrollbar-track, .bm-detail::-webkit-scrollbar-track { background:transparent; }
