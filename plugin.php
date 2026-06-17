@@ -339,7 +339,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-ex-arrow { color:#5a5a5a; padding-bottom:1px; }
         /* tree-style examples (BEM, HTML Tags, Expand Children) */
         .bm-tree { display:flex; flex-direction:column; gap:4px; font-family:var(--bm-font-mono); font-size:12px; }
-        .bm-tree-row { display:flex; align-items:center; gap:8px; padding:6px 9px; border:1px solid #2a2a2a; border-radius:5px; background:#161616; }
+        .bm-tree-row { position:relative; overflow:hidden; display:flex; align-items:center; gap:8px; padding:6px 9px; border:1px solid #2a2a2a; border-radius:5px; background:#161616; }
         .bm-tree-i { width:14px; height:14px; flex-shrink:0; color:#6a6a6a; display:flex; }
         .bm-tree-i svg { width:14px; height:14px; display:block; }
         .bm-tree-chev { width:12px; flex-shrink:0; color:var(--bm-color-text-muted); }
@@ -417,15 +417,20 @@ function bricksmate_builder_ui_and_modal() {
 
         function exampleHTML(m) {
             if (m.example === '__indicators__') {
-                const bar = (name, l, r) =>
-                    '<div style="position:relative;background:var(--bm-color-bg);border:1px solid var(--bm-color-border-subtle);border-radius:5px;padding:7px 12px;font-size:11px;color:var(--bm-color-text-soft);">' +
-                    (l ? '<span style="position:absolute;left:0;top:0;bottom:0;width:3px;background:' + l + ';border-radius:3px 0 0 3px;"></span>' : '') +
-                    (r ? '<span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:' + r + ';border-radius:0 3px 3px 0;"></span>' : '') +
-                    name + '</div>';
-                return '<div style="display:flex;flex-direction:column;gap:6px;">' +
-                    bar('Section', 'var(--bm-color-indicator-class)', null) +
-                    bar('Container', 'var(--bm-color-indicator-class)', 'var(--bm-color-indicator-id)') +
-                    bar('Heading', null, 'var(--bm-color-indicator-id)') +
+                const ic = {
+                    section: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+                    container: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>',
+                    heading: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M6 12h12"/></svg>'
+                };
+                const row = (icon, name, indent, l, r) =>
+                    '<div class="bm-tree-row" style="margin-left:' + indent + 'px;">' +
+                    (l ? '<span style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--bm-color-indicator-class);"></span>' : '') +
+                    (r ? '<span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--bm-color-indicator-id);"></span>' : '') +
+                    '<span class="bm-tree-i">' + icon + '</span><span class="bm-tree-name">' + name + '</span></div>';
+                return '<div class="bm-tree">' +
+                    row(ic.section, 'Section', 0, true, false) +
+                    row(ic.container, 'Container', 16, true, true) +
+                    row(ic.heading, 'Heading', 32, false, true) +
                     '</div>' +
                     '<div class="bm-legend">' +
                     '<span><span class="bm-sw" style="background:var(--bm-color-indicator-class);"></span>Styles applied via CSS class</span>' +
