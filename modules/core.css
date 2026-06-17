@@ -45,6 +45,7 @@
   /* ── Radios (DS: 4–5px) ─────────────────────────────────────────────── */
   --bm-radius-sm: 4px; /* inputs y elementos pequeños */
   --bm-radius-md: 6px; /* paneles, dropdowns */
+  --bm-radius-pill: 999px; /* toggles, chips redondeados */
 
   /* ── Espaciado ──────────────────────────────────────────────────────── */
   --bm-space-xs:  4px;

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BricksMate
  * Description: Your personal toolkit for Bricks Builder.
- * Version: 2.0.4
+ * Version: 2.0.5
  * Author: Samir Haddad
  * Author URI: https://samirh.com/
  * License: GPL v2 or later
@@ -196,13 +196,13 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'auto_select_class', 'label' => 'Auto-Select Class',
             'icon' => $i( '<path d="M4 4l7 16 2-6 6-2z"/>' ),
             'desc' => "When you create or rename a class, it's selected automatically so you can keep styling without extra clicks.",
-            'example' => '<div class="bm-ex"><div style="display:flex;align-items:center;gap:8px;border:1px solid var(--bm-color-border);border-radius:var(--bm-radius-md);padding:7px 9px;background:var(--bm-color-bg);"><span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:var(--bm-color-accent);color:#fff;">.card</span><span style="margin-left:auto;display:flex;gap:10px;color:#5f5f5f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l7 16 2-6 6-2z"/></svg></span></div><span style="align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--bm-color-accent-soft);color:var(--bm-color-accent-text);">.card</span></div>',
+            'example' => '<div class="bm-ex"><div style="display:flex;align-items:center;gap:8px;border:1px solid var(--bm-color-border);border-radius:var(--bm-radius-md);padding:7px 9px;background:var(--bm-color-bg);"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:var(--bm-color-accent);color:#fff;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>.card</span><span style="margin-left:auto;display:flex;gap:10px;color:#5f5f5f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l7 16 2-6 6-2z"/></svg></span></div><span style="align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--bm-color-accent-soft);color:var(--bm-color-accent-text);">.card</span></div>',
         ],
         [
             'key' => 'export_id_to_class', 'label' => 'Export ID Styles to Class',
             'icon' => $i( '<path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/>' ),
             'desc' => "Moves the styles applied to the element's ID over to its first global CSS class, in a single click.",
-            'example' => '<div class="bm-ex"><div class="bm-xb-field"><span class="bm-xb-chip">.hero__title</span><span class="bm-xb-acts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 16 2-6 6-2z"/></svg><span class="bm-xb-b">b</span></span></div><div class="bm-xb-rail"><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 8 20 12 16 16"/><polyline points="8 8 4 12 8 16"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></span><span class="bm-xb-cell bm-xb-on"><span class="bm-xb-tip">Export ID → Class<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div><div class="bm-xb-cap">On an element with an active class, click the <span style="color:var(--bm-color-accent-text);font-weight:600;">b</span> icon &rarr; <span style="color:var(--bm-color-accent-text);">Export ID &rarr; Class</span>.</div></div>',
+            'example' => '<div class="bm-ex"><div class="bm-xb-field"><span class="bm-xb-chip">.hero__title</span><span class="bm-xb-acts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 16 2-6 6-2z"/></svg><img class="bm-xb-b" src="/wp-content/themes/bricks/assets/images/bricks-favicon-b.svg" alt="Bricks" width="24" height="24"></span></div><div class="bm-xb-rail"><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 8 20 12 16 16"/><polyline points="8 8 4 12 8 16"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></span><span class="bm-xb-cell bm-xb-on"><span class="bm-xb-tip">Export ID → Class<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div><div class="bm-xb-cap">On an element with an active class, click the <span style="color:var(--bm-color-accent-text);font-weight:600;">b</span> icon &rarr; <span style="color:var(--bm-color-accent-text);">Export ID &rarr; Class</span>.</div></div>',
         ],
         [
             'key' => 'css_recipes', 'label' => 'CSS Recipes',
@@ -281,7 +281,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-item.bm-sel .bm-name { color:var(--bm-color-text); }
         .bm-switch { position:relative; display:inline-block; width:26px; height:14px; flex-shrink:0; }
         .bm-switch input { opacity:0; width:0; height:0; }
-        .bm-slider { position:absolute; cursor:pointer; inset:0; background:var(--bm-color-bg); border:1px solid var(--bm-color-border); transition:var(--bm-transition-normal); border-radius:14px; }
+        .bm-slider { position:absolute; cursor:pointer; inset:0; background:var(--bm-color-bg); border:1px solid var(--bm-color-border); transition:var(--bm-transition-normal); border-radius:var(--bm-radius-pill); }
         .bm-slider:before { position:absolute; content:""; height:10px; width:10px; left:2px; top:50%; transform:translateY(-50%); background:var(--bm-color-text-muted); transition:var(--bm-transition-normal); border-radius:50%; }
         input:checked + .bm-slider { background:var(--bm-color-accent-soft); border-color:var(--bm-color-accent); }
         input:checked + .bm-slider:before { transform:translate(10px,-50%); background:var(--bm-color-accent); }
@@ -292,7 +292,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-example { background:var(--bm-color-bg-elevated); border:1px solid var(--bm-color-border-subtle); border-radius:var(--bm-radius-md); padding:14px; }
         .bm-legend { display:flex; gap:18px; margin-top:12px; padding-top:12px; border-top:1px solid var(--bm-color-border-subtle); flex-wrap:wrap; }
         .bm-legend span { display:flex; align-items:center; gap:7px; font-size:11px; color:var(--bm-color-text-soft); }
-        .bm-sw { width:11px; height:11px; border-radius:3px; flex-shrink:0; }
+        .bm-sw { width:11px; height:11px; border-radius:var(--bm-radius-sm); flex-shrink:0; }
         .bm-recipe-list { max-height:150px; overflow-y:auto; display:flex; flex-direction:column; gap:1px; }
         .bm-recipe { display:flex; gap:10px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--bm-color-border-subtle); }
         .bm-recipe code { font-family:var(--bm-font-mono); font-size:11px; color:var(--bm-color-accent); min-width:140px; }
@@ -302,7 +302,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-pill-on { background:var(--bm-color-accent-soft); border:1px solid var(--bm-color-accent); color:var(--bm-color-accent); }
         .bm-pill-off { background:var(--bm-color-bg); border:1px dashed var(--bm-color-border); color:var(--bm-color-text-muted); }
         .bm-pill-off:hover { border-color:var(--bm-color-accent); color:var(--bm-color-accent); }
-        .bm-promo { display:flex; align-items:center; gap:10px; margin:12px; padding:10px 12px; border:1px solid var(--bm-color-accent-soft); background:#16132b; border-radius:7px; text-decoration:none; transition:var(--bm-transition-normal); }
+        .bm-promo { display:flex; align-items:center; gap:10px; margin:12px; padding:10px 12px; border:1px solid var(--bm-color-accent-soft); background:var(--bm-color-accent-soft); border-radius:var(--bm-radius-md); text-decoration:none; transition:var(--bm-transition-normal); }
         .bm-promo:hover { border-color:var(--bm-color-accent); }
         .bm-promo .bm-promo-logo { width:22px; height:22px; display:block; flex-shrink:0; }
         .bm-promo .bm-promo-txt { display:flex; flex-direction:column; line-height:1.3; }
@@ -328,9 +328,12 @@ function bricksmate_builder_ui_and_modal() {
         .bm-detail-desc { max-width:52ch; line-height:1.65; }
         .bm-detail-label { letter-spacing:.7px; }
         .bm-detail-label::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--bm-color-accent); margin-right:7px; vertical-align:middle; }
-        .bm-count { font-size:10px; font-weight:600; color:var(--bm-color-accent); background:var(--bm-color-accent-soft); padding:3px 9px; border-radius:20px; }
+        .bm-count { font-size:10px; font-weight:600; color:var(--bm-color-accent); background:var(--bm-color-accent-soft); padding:3px 9px; border-radius:var(--bm-radius-pill); }
         .bm-feedback { display:inline-flex; align-items:center; gap:5px; font-size:11px; color:var(--bm-color-text-muted); text-decoration:none; transition:color var(--bm-transition-fast); }
         .bm-feedback:hover { color:var(--bm-color-accent); }
+        .bm-discard { font-size:11px; color:var(--bm-color-text-muted); cursor:pointer; text-decoration:none; transition:color var(--bm-transition-fast); }
+        .bm-discard:hover { color:var(--bm-color-text); }
+        .bm-discard:focus-visible { outline:2px solid var(--bm-color-accent); outline-offset:2px; border-radius:var(--bm-radius-sm); }
         .bm-feedback svg { width:13px; height:13px; }
         /* unified example grammar */
         .bm-ex { font-family:var(--bm-font-mono); font-size:12px; display:flex; flex-direction:column; gap:12px; }
@@ -360,8 +363,8 @@ function bricksmate_builder_ui_and_modal() {
         .bm-xb-chip { font-family:var(--bm-font-mono); font-size:11px; font-weight:600; padding:4px 9px; border-radius:5px; background:var(--bm-color-accent); color:#fff; }
         .bm-xb-acts { margin-left:auto; display:flex; align-items:center; gap:9px; color:var(--bm-color-text-muted); }
         .bm-xb-acts svg { width:13px; height:13px; }
-        .bm-xb-b { width:24px; height:24px; border-radius:5px; background:var(--bm-color-accent); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; font-family:Georgia,serif; }
-        .bm-xb-rail { align-self:flex-end; display:flex; flex-direction:column; gap:4px; background:var(--bm-color-bg); border:1px solid var(--bm-color-border); border-radius:8px; padding:6px; box-shadow:var(--bm-shadow-dropdown); }
+        .bm-xb-b { width:24px; height:24px; display:block; flex-shrink:0; }
+        .bm-xb-rail { align-self:flex-end; display:flex; flex-direction:column; gap:4px; background:var(--bm-color-bg); border:1px solid var(--bm-color-border); border-radius:var(--bm-radius-md); padding:6px; box-shadow:var(--bm-shadow-dropdown); }
         .bm-xb-cell { position:relative; width:30px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:var(--bm-radius-md); color:var(--bm-color-text-muted); }
         .bm-xb-cell svg { width:15px; height:15px; }
         .bm-xb-on { background:var(--bm-color-accent-soft); color:var(--bm-color-accent-text); }
@@ -405,7 +408,10 @@ function bricksmate_builder_ui_and_modal() {
                 <span class="bm-count"><b id="bm-count">0</b> active</span>
                 <a class="bm-feedback" href="mailto:feedback@samirh.com?subject=BricksMate%20Feedback" title="Report a bug or suggest an improvement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v12H7l-3 3z"/></svg>Feedback</a>
             </span>
-            <button class="bm-save-btn" id="bm-save-settings">Save &amp; reload</button>
+            <span style="display:flex;align-items:center;gap:14px;">
+                <a class="bm-discard" id="bm-discard" role="button" tabindex="0" hidden>Discard</a>
+                <button class="bm-save-btn" id="bm-save-settings">Save &amp; reload</button>
+            </span>
         </div>
     </div>
 
@@ -416,6 +422,9 @@ function bricksmate_builder_ui_and_modal() {
         const M = D.modules, CAT = D.sidebarCatalog;
         let sel = 0;
         let sbActive = Array.isArray(D.sidebarActive) ? D.sidebarActive.slice() : [];
+        // Saved baseline, so changes can be discarded without reloading.
+        const bmSavedModules = M.map(m => m.enabled);
+        const bmSavedSidebar = sbActive.slice();
 
         const listEl = document.getElementById('bm-list');
         const detEl  = document.getElementById('bm-detail');
@@ -492,9 +501,18 @@ function bricksmate_builder_ui_and_modal() {
         function render() { renderList(); renderDetail(); }
 
         const bmSaveBtn = document.getElementById('bm-save-settings');
-        // Unsaved-changes cue: mark the Save button once the user changes anything.
+        const bmDiscardBtn = document.getElementById('bm-discard');
+        // Unsaved-changes cue: mark the Save button + reveal Discard once the user changes anything.
         let bmDirty = false;
-        function bmSetDirty() { if (!bmDirty) { bmDirty = true; bmSaveBtn.classList.add('bm-dirty'); } }
+        function bmSetDirty() { if (!bmDirty) { bmDirty = true; bmSaveBtn.classList.add('bm-dirty'); bmDiscardBtn.hidden = false; } }
+        function bmDiscard() {
+            M.forEach((m, i) => { m.enabled = bmSavedModules[i]; });
+            sbActive = bmSavedSidebar.slice();
+            bmDirty = false; bmSaveBtn.classList.remove('bm-dirty'); bmDiscardBtn.hidden = true;
+            render();
+        }
+        bmDiscardBtn.onclick = bmDiscard;
+        bmDiscardBtn.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); bmDiscard(); } };
 
         function toggleKey(key) {
             const m = M.find(x => x.key === key);
