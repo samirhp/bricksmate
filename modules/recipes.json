@@ -7,7 +7,7 @@
   "focus-parent": {
     "label": "Focus Parent",
     "description": "Moves the focus ring to the parent element and suppresses the child's.",
-    "css": "%root%:focus-within:not(:has(:focus-visible)) {\n\toutline: none;\n\toutline-offset: 0;\n\tbox-shadow: none;\n}\n%root%:focus-within {\n\toutline: var(--focus-width) solid var(--focus-color);\n\toutline-offset: var(--focus-offset);\n}\n%root% :focus {\n\toutline: none !important;\n\tbox-shadow: none !important;\n}"
+    "css": "/* Tokens by default. Tip: replace these with your design system's variables. */\n%root% {\n\t--focus-width: 2px;\n\t--focus-color: #1a73e8;\n\t--focus-offset: 2px;\n}\n%root%:focus-within:not(:has(:focus-visible)) {\n\toutline: none;\n\toutline-offset: 0;\n\tbox-shadow: none;\n}\n%root%:focus-within {\n\toutline: var(--focus-width) solid var(--focus-color);\n\toutline-offset: var(--focus-offset);\n}\n%root% :focus {\n\toutline: none !important;\n\tbox-shadow: none !important;\n}"
   },
   "list-none": {
     "label": "List None",
