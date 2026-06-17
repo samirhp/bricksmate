@@ -2,6 +2,19 @@
 
 All notable changes to BricksMate are documented in this file.
 
+## v2.0.5
+
+### Added
+- A "Discard" action in the settings panel to revert unsaved changes without reloading.
+- Press Esc to close the settings panel.
+
+### Changed
+- Wider module list so longer names (e.g. "Export ID Styles to Class") no longer wrap.
+
+### Fixed
+- The settings panel can no longer be dragged off-screen.
+- Closing the panel now reverts any unsaved changes to the last saved state.
+
 ## v2.0.4
 
 ### Added

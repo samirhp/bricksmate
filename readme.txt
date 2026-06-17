@@ -4,7 +4,7 @@ Tags: bricks, bricks builder, bem, css, design system, page builder
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,13 @@ BricksMate checks its GitHub repository and offers updates straight from the
 WordPress Plugins screen, like any other plugin.
 
 == Changelog ==
+
+= 2.0.5 =
+* Added: a "Discard" action to revert unsaved changes in the settings panel without reloading.
+* Added: press Esc to close the settings panel.
+* Changed: wider module list so longer names like "Export ID Styles to Class" no longer wrap.
+* Fixed: the settings panel can no longer be dragged off-screen.
+* Fixed: closing the panel reverts any unsaved changes to the last saved state.
 
 = 2.0.4 =
 * Added: a discreet feedback link in the settings panel footer to report bugs or suggest improvements.
