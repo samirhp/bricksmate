@@ -622,9 +622,14 @@ function bricksmate_builder_ui_and_modal() {
         }, 500);
 
         const closeBtn = document.getElementById('bm-close-modal');
-        const closePanel = () => document.getElementById('bm-settings-panel').classList.remove('bm-active');
+        // Closing reverts any unsaved changes to the saved baseline (nothing applies until Save).
+        const closePanel = () => { if (bmDirty) bmDiscard(); document.getElementById('bm-settings-panel').classList.remove('bm-active'); };
         closeBtn.onclick = closePanel;
         closeBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); closePanel(); } });
+        // Esc closes the panel, like every other floating panel in Bricks.
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.getElementById('bm-settings-panel').classList.contains('bm-active')) { e.preventDefault(); closePanel(); }
+        });
 
         // Drag the panel by its header.
         const panel = document.getElementById('bm-settings-panel');
@@ -641,8 +646,11 @@ function bricksmate_builder_ui_and_modal() {
         });
         function onMouseMove(e) {
             if (!isDragging) return;
-            panel.style.left = (initialX + (e.clientX - startX)) + 'px';
-            panel.style.top  = (initialY + (e.clientY - startY)) + 'px';
+            // Clamp to the viewport so the panel can't be dragged out of reach.
+            const maxX = Math.max(0, window.innerWidth - panel.offsetWidth);
+            const maxY = Math.max(0, window.innerHeight - panel.offsetHeight);
+            panel.style.left = Math.min(Math.max(0, initialX + (e.clientX - startX)), maxX) + 'px';
+            panel.style.top  = Math.min(Math.max(0, initialY + (e.clientY - startY)), maxY) + 'px';
         }
         function onMouseUp() {
             isDragging = false;
