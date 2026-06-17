@@ -490,16 +490,11 @@ function bricksmate_builder_ui_and_modal() {
 
         function render() { renderList(); renderDetail(); }
 
-        // Settings persist server-side but only take effect on reload, so we never
-        // auto-reload (that would discard unsaved builder work). After a successful
-        // save the button becomes "Reload to apply"; any further change reverts it.
         const bmSaveBtn = document.getElementById('bm-save-settings');
-        let bmSaved = false;
-        function bmMarkDirty() { if (bmSaved) { bmSaved = false; bmSaveBtn.textContent = 'Save & reload'; } }
 
         function toggleKey(key) {
             const m = M.find(x => x.key === key);
-            if (m) { m.enabled = !m.enabled; bmMarkDirty(); render(); }
+            if (m) { m.enabled = !m.enabled; render(); }
         }
 
         listEl.addEventListener('click', (e) => {
@@ -531,9 +526,9 @@ function bricksmate_builder_ui_and_modal() {
         });
         detEl.addEventListener('click', (e) => {
             const rm = e.target.closest('[data-rm]');
-            if (rm) { sbActive = sbActive.filter(n => n !== rm.dataset.rm); bmMarkDirty(); renderDetail(); return; }
+            if (rm) { sbActive = sbActive.filter(n => n !== rm.dataset.rm); renderDetail(); return; }
             const ad = e.target.closest('[data-add]');
-            if (ad) { sbActive.push(ad.dataset.add); bmMarkDirty(); renderDetail(); }
+            if (ad) { sbActive.push(ad.dataset.add); renderDetail(); }
         });
 
         // Drag to reorder the active Sidebar Shortcuts rail.
@@ -559,24 +554,23 @@ function bricksmate_builder_ui_and_modal() {
             const toIdx = sbActive.indexOf(target);
             sbActive.splice(toIdx, 0, dragName); // insert before the target chip
             dragName = null;
-            bmMarkDirty();
             renderDetail();
         });
         function bmFocusChip(n) { const el = detEl.querySelector('[data-name="' + n + '"]') || detEl.querySelector('[data-add="' + n + '"]'); if (el) el.focus(); }
         detEl.addEventListener('keydown', (e) => {
             const add = e.target.closest('[data-add]');
-            if (add && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); sbActive.push(add.dataset.add); bmMarkDirty(); renderDetail(); bmFocusChip(add.dataset.add); return; }
+            if (add && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); sbActive.push(add.dataset.add); renderDetail(); bmFocusChip(add.dataset.add); return; }
             const pill = e.target.closest('[data-name]');
             if (!pill) return;
             const name = pill.dataset.name;
-            if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); sbActive = sbActive.filter(x => x !== name); bmMarkDirty(); renderDetail(); return; }
+            if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); sbActive = sbActive.filter(x => x !== name); renderDetail(); return; }
             if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.key === 'ArrowRight') {
                 e.preventDefault();
                 const i = sbActive.indexOf(name);
                 const j = i + ((e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 1);
                 if (j < 0 || j >= sbActive.length) return;
                 sbActive.splice(i, 1); sbActive.splice(j, 0, name);
-                bmMarkDirty(); renderDetail(); bmFocusChip(name);
+                renderDetail(); bmFocusChip(name);
             }
         });
 
@@ -636,7 +630,6 @@ function bricksmate_builder_ui_and_modal() {
         // Save: module flags + sidebar rail. Two-step — save, then user-initiated
         // reload (never an automatic reload that could discard unsaved builder work).
         bmSaveBtn.onclick = () => {
-            if (bmSaved) { location.reload(); return; }
             bmSaveBtn.disabled = true; bmSaveBtn.textContent = 'Saving…'; bmSaveBtn.style.opacity = '0.7'; bmSaveBtn.style.background = '';
             const data = new URLSearchParams();
             data.append('action', 'bricksmate_save_settings_ajax');
@@ -646,9 +639,8 @@ function bricksmate_builder_ui_and_modal() {
             fetch(BricksMateConfig.ajaxUrl, { method: 'POST', body: data })
                 .then(res => res.json())
                 .then(response => {
-                    bmSaveBtn.disabled = false; bmSaveBtn.style.opacity = '1';
-                    if (response.success) { bmSaved = true; bmSaveBtn.textContent = 'Reload to apply'; }
-                    else { bmSaveBtn.textContent = "Couldn't save — click to retry"; bmSaveBtn.style.background = '#f15f5f'; }
+                    if (response.success) { bmSaveBtn.textContent = 'Saved! Reloading…'; setTimeout(() => location.reload(), 500); }
+                    else { bmSaveBtn.disabled = false; bmSaveBtn.style.opacity = '1'; bmSaveBtn.textContent = "Couldn't save — click to retry"; bmSaveBtn.style.background = '#f15f5f'; }
                 })
                 .catch(() => { bmSaveBtn.disabled = false; bmSaveBtn.style.opacity = '1'; bmSaveBtn.textContent = "Couldn't save — click to retry"; bmSaveBtn.style.background = '#f15f5f'; });
         };
