@@ -28,9 +28,10 @@
   --bm-color-text-muted:    #808080; /* etiquetas / iconos inactivos (DS text-3) */
 
   /* ── Color: acento ──────────────────────────────────────────────────── */
-  --bm-color-accent:        #755cf5; /* morado de marca (DS accent) */
-  --bm-color-accent-hover:  #927ef7; /* morado hover (DS dark) */
-  --bm-color-accent-soft:   #221c40; /* fondo acento sutil (DS accent-light dark) */
+  --bm-color-accent:        #765df5; /* morado de marca (DS accent) */
+  --bm-color-accent-hover:  #8d7af6; /* morado hover (DS dark) */
+  --bm-color-accent-soft:   #201a3a; /* fondo acento sutil (DS accent-light dark) */
+  --bm-color-accent-text:   #a99cf8; /* morado claro legible sobre superficies oscuras */
 
   /* ── Color: estado / semánticos ─────────────────────────────────────── */
   --bm-color-error:         #f15f5f; /* DS error (dark) */
@@ -72,7 +73,9 @@
 .bbem-shortcut-btn:focus-visible,
 .bbem-trigger-btn:focus-visible,
 .bbem-text-toggle:focus-visible,
-.bbem-btn:focus-visible {
+.bbem-btn:focus-visible,
+.bm-item:focus-visible,
+.bm-pill:focus-visible {
   outline: 2px solid var(--bm-color-accent);
   outline-offset: 2px;
   border-radius: var(--bm-radius-sm);

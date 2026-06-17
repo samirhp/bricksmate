@@ -13,7 +13,7 @@ if ( ! defined( "ABSPATH" ) ) {
     exit;
 }
 
-// Plugin Update Checker — auto-updates from the GitHub repo (branch main).
+// Plugin Update Checker — auto-updates from published GitHub Releases (release asset).
 require plugin_dir_path( __FILE__ ) . "plugin-update-checker/plugin-update-checker.php";
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $bricksmateUpdateChecker = PucFactory::buildUpdateChecker(
@@ -196,13 +196,13 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'auto_select_class', 'label' => 'Auto-Select Class',
             'icon' => $i( '<path d="M4 4l7 16 2-6 6-2z"/>' ),
             'desc' => "When you create or rename a class, it's selected automatically so you can keep styling without extra clicks.",
-            'example' => '<div class="bm-ex"><div style="display:flex;align-items:center;gap:8px;border:1px solid var(--bm-color-border);border-radius:6px;padding:7px 9px;background:var(--bm-color-bg);"><span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:var(--bm-color-accent);color:#fff;">.card</span><span style="margin-left:auto;display:flex;gap:10px;color:#5f5f5f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l7 16 2-6 6-2z"/></svg></span></div><span style="align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--bm-color-accent-soft);color:#a99cf8;">.card</span></div>',
+            'example' => '<div class="bm-ex"><div style="display:flex;align-items:center;gap:8px;border:1px solid var(--bm-color-border);border-radius:6px;padding:7px 9px;background:var(--bm-color-bg);"><span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:var(--bm-color-accent);color:#fff;">.card</span><span style="margin-left:auto;display:flex;gap:10px;color:#5f5f5f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l7 16 2-6 6-2z"/></svg></span></div><span style="align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--bm-color-accent-soft);color:var(--bm-color-accent-text);">.card</span></div>',
         ],
         [
             'key' => 'export_id_to_class', 'label' => 'Export ID Styles to Class',
             'icon' => $i( '<path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/>' ),
             'desc' => "Moves the styles applied to the element's ID over to its first global CSS class, in a single click.",
-            'example' => '<div class="bm-ex"><div class="bm-xb-field"><span class="bm-xb-chip">.hero__title</span><span class="bm-xb-acts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 16 2-6 6-2z"/></svg><span class="bm-xb-b">b</span></span></div><div class="bm-xb-rail"><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 8 20 12 16 16"/><polyline points="8 8 4 12 8 16"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></span><span class="bm-xb-cell bm-xb-on"><span class="bm-xb-tip">Export ID → Class<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div><div class="bm-xb-cap">On an element with an active class, click the <span style="color:#a99cf8;font-weight:600;">b</span> icon &rarr; <span style="color:#a99cf8;">Export ID &rarr; Class</span>.</div></div>',
+            'example' => '<div class="bm-ex"><div class="bm-xb-field"><span class="bm-xb-chip">.hero__title</span><span class="bm-xb-acts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 16 2-6 6-2z"/></svg><span class="bm-xb-b">b</span></span></div><div class="bm-xb-rail"><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 8 20 12 16 16"/><polyline points="8 8 4 12 8 16"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></span><span class="bm-xb-cell bm-xb-on"><span class="bm-xb-tip">Export ID → Class<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div><div class="bm-xb-cap">On an element with an active class, click the <span style="color:var(--bm-color-accent-text);font-weight:600;">b</span> icon &rarr; <span style="color:var(--bm-color-accent-text);">Export ID &rarr; Class</span>.</div></div>',
         ],
         [
             'key' => 'css_recipes', 'label' => 'CSS Recipes',
@@ -307,7 +307,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-promo .bm-promo-logo { width:22px; height:22px; display:block; flex-shrink:0; }
         .bm-promo .bm-promo-txt { display:flex; flex-direction:column; line-height:1.3; }
         .bm-promo .bm-promo-txt b { font-size:12px; font-weight:600; color:var(--bm-color-text); }
-        .bm-promo .bm-promo-txt span { font-size:11px; color:#9a8fd6; }
+        .bm-promo .bm-promo-txt span { font-size:11px; color:var(--bm-color-accent-text); }
         .bm-panel-footer { display:flex; justify-content:space-between; align-items:center; background:var(--bm-color-bg-elevated); padding:10px 15px; border-top:1px solid var(--bm-color-border); }
         .bm-count { font-size:11px; color:var(--bm-color-text-muted); }
         .bm-count b { color:var(--bm-color-accent); font-weight:600; }
@@ -335,20 +335,20 @@ function bricksmate_builder_ui_and_modal() {
         .bm-ex { font-family:var(--bm-font-mono); font-size:12px; display:flex; flex-direction:column; gap:12px; }
         .bm-ex-row { display:flex; align-items:flex-end; gap:12px; flex-wrap:wrap; }
         .bm-ex-col { display:flex; flex-direction:column; gap:4px; }
-        .bm-ex-cap { font-family:var(--bm-font-ui); font-size:9px; text-transform:uppercase; letter-spacing:.6px; color:#6a6a6a; }
+        .bm-ex-cap { font-family:var(--bm-font-ui); font-size:9px; text-transform:uppercase; letter-spacing:.6px; color:var(--bm-color-text-muted); }
         .bm-ex-in { color:var(--bm-color-text-muted); }
-        .bm-ex-out { color:#a99cf8; }
+        .bm-ex-out { color:var(--bm-color-accent-text); }
         .bm-ex-mod { color:var(--bm-color-modifier); }
         .bm-ex-arrow { color:#5a5a5a; padding-bottom:1px; }
         /* tree-style examples (BEM, HTML Tags, Expand Children) */
         .bm-tree { display:flex; flex-direction:column; gap:4px; font-family:var(--bm-font-mono); font-size:12px; }
         .bm-tree-row { position:relative; overflow:hidden; display:flex; align-items:center; gap:8px; padding:6px 9px; border:1px solid #2a2a2a; border-radius:5px; background:#161616; }
-        .bm-tree-i { width:14px; height:14px; flex-shrink:0; color:#6a6a6a; display:flex; }
+        .bm-tree-i { width:14px; height:14px; flex-shrink:0; color:var(--bm-color-text-muted); display:flex; }
         .bm-tree-i svg { width:14px; height:14px; display:block; }
         .bm-tree-chev { width:12px; flex-shrink:0; color:var(--bm-color-text-muted); }
         .bm-tree-name { color:var(--bm-color-text-soft); }
         .bm-tree-in { color:var(--bm-color-text-muted); }
-        .bm-tree-el { color:#a99cf8; }
+        .bm-tree-el { color:var(--bm-color-accent-text); }
         .bm-tree-mod { color:var(--bm-color-modifier); }
         .bm-tree-badge { font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; background:var(--bm-color-tag-soft); color:var(--bm-color-tag); letter-spacing:.3px; }
         .bm-tree-role { margin-left:auto; font-family:var(--bm-font-ui); font-size:9px; text-transform:uppercase; letter-spacing:.5px; color:#5f5f5f; }
@@ -357,15 +357,15 @@ function bricksmate_builder_ui_and_modal() {
         /* Export ID → Class example (Bricks action rail) */
         .bm-xb-field { display:flex; align-items:center; gap:8px; border:1px solid var(--bm-color-border); border-radius:6px; padding:7px 9px; background:var(--bm-color-bg); }
         .bm-xb-chip { font-family:var(--bm-font-mono); font-size:11px; font-weight:600; padding:4px 9px; border-radius:5px; background:var(--bm-color-accent); color:#fff; }
-        .bm-xb-acts { margin-left:auto; display:flex; align-items:center; gap:9px; color:#6a6a6a; }
+        .bm-xb-acts { margin-left:auto; display:flex; align-items:center; gap:9px; color:var(--bm-color-text-muted); }
         .bm-xb-acts svg { width:13px; height:13px; }
         .bm-xb-b { width:24px; height:24px; border-radius:5px; background:var(--bm-color-accent); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; font-family:Georgia,serif; }
         .bm-xb-rail { align-self:flex-end; display:flex; flex-direction:column; gap:4px; background:var(--bm-color-bg); border:1px solid var(--bm-color-border); border-radius:8px; padding:6px; box-shadow:var(--bm-shadow-dropdown); }
         .bm-xb-cell { position:relative; width:30px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:6px; color:var(--bm-color-text-muted); }
         .bm-xb-cell svg { width:15px; height:15px; }
-        .bm-xb-on { background:var(--bm-color-accent-soft); color:#a99cf8; }
+        .bm-xb-on { background:var(--bm-color-accent-soft); color:var(--bm-color-accent-text); }
         .bm-xb-tip { position:absolute; right:100%; top:50%; transform:translateY(-50%); margin-right:9px; display:flex; align-items:center; gap:6px; background:#0a0a0a; border:1px solid var(--bm-color-border-subtle); border-radius:5px; padding:4px 9px; font-size:10px; color:var(--bm-color-text); font-family:var(--bm-font-ui); white-space:nowrap; }
-        .bm-xb-tip svg { width:11px; height:11px; color:#a99cf8; }
+        .bm-xb-tip svg { width:11px; height:11px; color:var(--bm-color-accent-text); }
         .bm-xb-cap { font-family:var(--bm-font-ui); font-size:11px; color:var(--bm-color-text-muted); text-align:center; line-height:1.5; }
     </style>
 
@@ -425,7 +425,7 @@ function bricksmate_builder_ui_and_modal() {
 
         function renderList() {
             listEl.innerHTML = M.map((m, idx) =>
-                '<div class="bm-item' + (idx === sel ? ' bm-sel' : '') + '" data-idx="' + idx + '">' +
+                '<div class="bm-item' + (idx === sel ? ' bm-sel' : '') + '" data-idx="' + idx + '" tabindex="0" aria-label="' + m.label + '">' +
                     '<span class="bm-ico">' + m.icon + '</span>' +
                     '<span class="bm-name">' + m.label + '</span>' +
                     sw(m.key, m.enabled) +
@@ -466,10 +466,10 @@ function bricksmate_builder_ui_and_modal() {
             }
             if (m.example === '__sidebar__') {
                 const active = sbActive.map(n => CAT[n]
-                    ? '<span class="bm-pill bm-pill-on" draggable="true" data-name="' + n + '" style="cursor:grab;"><span class="bm-pico">' + CAT[n].svg + '</span>' + CAT[n].label + ' <span data-rm="' + n + '" style="font-size:13px;cursor:pointer;padding:0 2px;">&times;</span></span>'
+                    ? '<span class="bm-pill bm-pill-on" draggable="true" data-name="' + n + '" tabindex="0" role="button" aria-label="' + CAT[n].label + ', reorder with arrow keys, Delete to remove" style="cursor:grab;"><span class="bm-pico">' + CAT[n].svg + '</span>' + CAT[n].label + ' <span data-rm="' + n + '" style="font-size:13px;cursor:pointer;padding:0 2px;">&times;</span></span>'
                     : '').join('');
                 const avail = Object.keys(CAT).filter(n => sbActive.indexOf(n) === -1).map(n =>
-                    '<span class="bm-pill bm-pill-off" data-add="' + n + '"><span style="font-size:12px;">+</span><span class="bm-pico">' + CAT[n].svg + '</span>' + CAT[n].label + '</span>'
+                    '<span class="bm-pill bm-pill-off" data-add="' + n + '" tabindex="0" role="button" aria-label="Add ' + CAT[n].label + '"><span style="font-size:12px;">+</span><span class="bm-pico">' + CAT[n].svg + '</span>' + CAT[n].label + '</span>'
                 ).join('');
                 return '<div style="font-size:11px;color:var(--bm-color-text-muted);margin-bottom:7px;">In the rail (drag to reorder, click &times; to remove):</div>' +
                     '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">' + (active || '<span style="font-size:11px;color:var(--bm-color-text-muted);">No elements. Add some below.</span>') + '</div>' +
@@ -515,6 +515,20 @@ function bricksmate_builder_ui_and_modal() {
             const it = e.target.closest('[data-idx]');
             if (it) { sel = +it.dataset.idx; render(); }
         });
+        listEl.addEventListener('keydown', (e) => {
+            if (e.target.closest('.bm-switch')) return;
+            const it = e.target.closest('[data-idx]');
+            if (!it) return;
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault(); sel = +it.dataset.idx; render();
+                const f = listEl.querySelector('[data-idx="' + sel + '"]'); if (f) f.focus();
+            } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                const items = Array.prototype.slice.call(listEl.querySelectorAll('[data-idx]'));
+                const n = items.indexOf(it) + (e.key === 'ArrowDown' ? 1 : -1);
+                if (items[n]) items[n].focus();
+            }
+        });
         detEl.addEventListener('click', (e) => {
             const rm = e.target.closest('[data-rm]');
             if (rm) { sbActive = sbActive.filter(n => n !== rm.dataset.rm); bmMarkDirty(); renderDetail(); return; }
@@ -547,6 +561,23 @@ function bricksmate_builder_ui_and_modal() {
             dragName = null;
             bmMarkDirty();
             renderDetail();
+        });
+        function bmFocusChip(n) { const el = detEl.querySelector('[data-name="' + n + '"]') || detEl.querySelector('[data-add="' + n + '"]'); if (el) el.focus(); }
+        detEl.addEventListener('keydown', (e) => {
+            const add = e.target.closest('[data-add]');
+            if (add && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); sbActive.push(add.dataset.add); bmMarkDirty(); renderDetail(); bmFocusChip(add.dataset.add); return; }
+            const pill = e.target.closest('[data-name]');
+            if (!pill) return;
+            const name = pill.dataset.name;
+            if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); sbActive = sbActive.filter(x => x !== name); bmMarkDirty(); renderDetail(); return; }
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                const i = sbActive.indexOf(name);
+                const j = i + ((e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 1);
+                if (j < 0 || j >= sbActive.length) return;
+                sbActive.splice(i, 1); sbActive.splice(j, 0, name);
+                bmMarkDirty(); renderDetail(); bmFocusChip(name);
+            }
         });
 
         // Inject the topbar launcher icon.
@@ -606,7 +637,7 @@ function bricksmate_builder_ui_and_modal() {
         // reload (never an automatic reload that could discard unsaved builder work).
         bmSaveBtn.onclick = () => {
             if (bmSaved) { location.reload(); return; }
-            bmSaveBtn.disabled = true; bmSaveBtn.textContent = 'Saving…'; bmSaveBtn.style.opacity = '0.7';
+            bmSaveBtn.disabled = true; bmSaveBtn.textContent = 'Saving…'; bmSaveBtn.style.opacity = '0.7'; bmSaveBtn.style.background = '';
             const data = new URLSearchParams();
             data.append('action', 'bricksmate_save_settings_ajax');
             M.forEach(m => data.append(m.key, m.enabled ? 1 : 0));
@@ -617,9 +648,9 @@ function bricksmate_builder_ui_and_modal() {
                 .then(response => {
                     bmSaveBtn.disabled = false; bmSaveBtn.style.opacity = '1';
                     if (response.success) { bmSaved = true; bmSaveBtn.textContent = 'Reload to apply'; }
-                    else { bmSaveBtn.textContent = 'Error!'; bmSaveBtn.style.background = '#f15f5f'; }
+                    else { bmSaveBtn.textContent = "Couldn't save — click to retry"; bmSaveBtn.style.background = '#f15f5f'; }
                 })
-                .catch(() => { bmSaveBtn.disabled = false; bmSaveBtn.style.opacity = '1'; bmSaveBtn.textContent = 'Error!'; bmSaveBtn.style.background = '#f15f5f'; });
+                .catch(() => { bmSaveBtn.disabled = false; bmSaveBtn.style.opacity = '1'; bmSaveBtn.textContent = "Couldn't save — click to retry"; bmSaveBtn.style.background = '#f15f5f'; });
         };
 
         render();
