@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BricksMate
  * Description: Your personal toolkit for Bricks Builder.
- * Version: 2.0.3
+ * Version: 2.0.4
  * Author: Samir Haddad
  * Author URI: https://samirh.com/
  * License: GPL v2 or later
@@ -328,6 +328,9 @@ function bricksmate_builder_ui_and_modal() {
         .bm-detail-label { letter-spacing:.7px; }
         .bm-detail-label::before { content:""; display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--bm-color-accent); margin-right:7px; vertical-align:middle; }
         .bm-count { font-size:10px; font-weight:600; color:var(--bm-color-accent); background:var(--bm-color-accent-soft); padding:3px 9px; border-radius:20px; }
+        .bm-feedback { display:inline-flex; align-items:center; gap:5px; font-size:11px; color:var(--bm-color-text-muted); text-decoration:none; transition:color var(--bm-transition-fast); }
+        .bm-feedback:hover { color:var(--bm-color-accent); }
+        .bm-feedback svg { width:13px; height:13px; }
         /* unified example grammar */
         .bm-ex { font-family:var(--bm-font-mono); font-size:12px; display:flex; flex-direction:column; gap:12px; }
         .bm-ex-row { display:flex; align-items:flex-end; gap:12px; flex-wrap:wrap; }
@@ -384,7 +387,10 @@ function bricksmate_builder_ui_and_modal() {
             <span class="bm-promo-txt"><b>BricksMate DS</b><span>Create your design system &rarr;</span></span>
         </a>
         <div class="bm-panel-footer">
-            <span class="bm-count"><b id="bm-count">0</b> active</span>
+            <span style="display:flex;align-items:center;gap:12px;">
+                <span class="bm-count"><b id="bm-count">0</b> active</span>
+                <a class="bm-feedback" href="mailto:feedback@samirh.com?subject=BricksMate%20Feedback" title="Report a bug or suggest an improvement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v12H7l-3 3z"/></svg>Feedback</a>
+            </span>
             <button class="bm-save-btn" id="bm-save-settings">Save &amp; reload</button>
         </div>
     </div>

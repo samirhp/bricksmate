@@ -2,6 +2,11 @@
 
 All notable changes to BricksMate are documented in this file.
 
+## v2.0.4
+
+### Added
+- A discreet feedback link in the settings panel footer to report bugs or suggest improvements.
+
 ## v2.0.3
 
 ### Changed
