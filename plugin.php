@@ -202,7 +202,7 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'export_id_to_class', 'label' => 'Export ID Styles to Class',
             'icon' => $i( '<path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/>' ),
             'desc' => "Moves the styles applied to the element's ID over to its first global CSS class, in a single click.",
-            'example' => '<div class="bm-ex"><div class="bm-ex-row"><div class="bm-ex-col"><span class="bm-ex-cap">Before</span><span class="bm-ex-in">#id { padding }</span></div><span class="bm-ex-arrow">→</span><div class="bm-ex-col"><span class="bm-ex-cap">After</span><span class="bm-ex-out">.card { padding }</span></div></div></div>',
+            'example' => '<div class="bm-ex"><div class="bm-xb-field"><span class="bm-xb-chip">.hero__title</span><span class="bm-xb-acts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 16 2-6 6-2z"/></svg><span class="bm-xb-b">b</span></span></div><div class="bm-xb-rail"><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 8 20 12 16 16"/><polyline points="8 8 4 12 8 16"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></span><span class="bm-xb-cell bm-xb-on"><span class="bm-xb-tip">Export ID → Class<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><polyline points="8 7 12 3 16 7"/><path d="M5 14v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg></span><span class="bm-xb-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div><div class="bm-xb-cap">On an element with an active class, click the <span style="color:#a99cf8;font-weight:600;">b</span> icon &rarr; <span style="color:#a99cf8;">Export ID &rarr; Class</span>.</div></div>',
         ],
         [
             'key' => 'css_recipes', 'label' => 'CSS Recipes',
@@ -354,6 +354,19 @@ function bricksmate_builder_ui_and_modal() {
         .bm-tree-role { margin-left:auto; font-family:var(--bm-font-ui); font-size:9px; text-transform:uppercase; letter-spacing:.5px; color:#5f5f5f; }
         .bm-tree-expand { margin-left:auto; color:var(--bm-color-accent); display:flex; }
         .bm-tree-expand svg { width:13px; height:13px; display:block; }
+        /* Export ID → Class example (Bricks action rail) */
+        .bm-xb-field { display:flex; align-items:center; gap:8px; border:1px solid var(--bm-color-border); border-radius:6px; padding:7px 9px; background:var(--bm-color-bg); }
+        .bm-xb-chip { font-family:var(--bm-font-mono); font-size:11px; font-weight:600; padding:4px 9px; border-radius:5px; background:var(--bm-color-accent); color:#fff; }
+        .bm-xb-acts { margin-left:auto; display:flex; align-items:center; gap:9px; color:#6a6a6a; }
+        .bm-xb-acts svg { width:13px; height:13px; }
+        .bm-xb-b { width:24px; height:24px; border-radius:5px; background:var(--bm-color-accent); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; font-family:Georgia,serif; }
+        .bm-xb-rail { align-self:flex-end; display:flex; flex-direction:column; gap:4px; background:var(--bm-color-bg); border:1px solid var(--bm-color-border); border-radius:8px; padding:6px; box-shadow:var(--bm-shadow-dropdown); }
+        .bm-xb-cell { position:relative; width:30px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:6px; color:var(--bm-color-text-muted); }
+        .bm-xb-cell svg { width:15px; height:15px; }
+        .bm-xb-on { background:var(--bm-color-accent-soft); color:#a99cf8; }
+        .bm-xb-tip { position:absolute; right:100%; top:50%; transform:translateY(-50%); margin-right:9px; display:flex; align-items:center; gap:6px; background:#0a0a0a; border:1px solid var(--bm-color-border-subtle); border-radius:5px; padding:4px 9px; font-size:10px; color:var(--bm-color-text); font-family:var(--bm-font-ui); white-space:nowrap; }
+        .bm-xb-tip svg { width:11px; height:11px; color:#a99cf8; }
+        .bm-xb-cap { font-family:var(--bm-font-ui); font-size:11px; color:var(--bm-color-text-muted); text-align:center; line-height:1.5; }
     </style>
 
     <div id="bm-settings-panel">
