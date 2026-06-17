@@ -196,7 +196,7 @@ function bricksmate_builder_ui_and_modal() {
             'key' => 'auto_select_class', 'label' => 'Auto-Select Class',
             'icon' => $i( '<path d="M4 4l7 16 2-6 6-2z"/>' ),
             'desc' => "When you create or rename a class, it's selected automatically so you can keep styling without extra clicks.",
-            'example' => '<div class="bm-ex"><div style="display:flex;align-items:center;gap:8px;border:1px solid var(--bm-color-border);border-radius:6px;padding:7px 9px;background:var(--bm-color-bg);"><span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:var(--bm-color-accent);color:#fff;">.card</span><span style="margin-left:auto;display:flex;gap:10px;color:#5f5f5f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l7 16 2-6 6-2z"/></svg></span></div><span style="align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--bm-color-accent-soft);color:var(--bm-color-accent-text);">.card</span></div>',
+            'example' => '<div class="bm-ex"><div style="display:flex;align-items:center;gap:8px;border:1px solid var(--bm-color-border);border-radius:var(--bm-radius-md);padding:7px 9px;background:var(--bm-color-bg);"><span style="font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;background:var(--bm-color-accent);color:#fff;">.card</span><span style="margin-left:auto;display:flex;gap:10px;color:#5f5f5f;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l7 16 2-6 6-2z"/></svg></span></div><span style="align-self:flex-start;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--bm-color-accent-soft);color:var(--bm-color-accent-text);">.card</span></div>',
         ],
         [
             'key' => 'export_id_to_class', 'label' => 'Export ID Styles to Class',
@@ -271,7 +271,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-panel-body { display:flex; min-height:360px; }
         .bm-list { width:228px; flex-shrink:0; border-right:1px solid var(--bm-color-border-subtle); padding:8px; display:flex; flex-direction:column; gap:2px; overflow-y:auto; max-height:62vh; }
         .bm-detail { flex:1; min-width:0; padding:18px 20px; overflow-y:auto; max-height:62vh; }
-        .bm-item { display:flex; align-items:center; gap:9px; padding:8px 10px; border-radius:6px; cursor:pointer; border:1px solid transparent; transition:var(--bm-transition-fast); }
+        .bm-item { display:flex; align-items:center; gap:9px; padding:8px 10px; border-radius:var(--bm-radius-md); cursor:pointer; border:1px solid transparent; transition:var(--bm-transition-fast); }
         .bm-item:hover { background:var(--bm-color-bg-elevated); }
         .bm-item.bm-sel { background:var(--bm-color-accent-soft); border-color:var(--bm-color-accent); }
         .bm-item .bm-ico, .bm-detail .bm-ico { width:18px; height:18px; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--bm-color-text-muted); }
@@ -289,7 +289,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-detail-title { display:flex; align-items:center; gap:9px; font-size:15px; font-weight:600; color:var(--bm-color-text); }
         .bm-detail-desc { font-size:12.5px; color:var(--bm-color-text-soft); line-height:1.6; margin:0 0 16px; }
         .bm-detail-label { font-size:10px; text-transform:uppercase; letter-spacing:.5px; color:var(--bm-color-text-muted); margin-bottom:8px; }
-        .bm-example { background:var(--bm-color-bg-elevated); border:1px solid var(--bm-color-border-subtle); border-radius:6px; padding:14px; }
+        .bm-example { background:var(--bm-color-bg-elevated); border:1px solid var(--bm-color-border-subtle); border-radius:var(--bm-radius-md); padding:14px; }
         .bm-legend { display:flex; gap:18px; margin-top:12px; padding-top:12px; border-top:1px solid var(--bm-color-border-subtle); flex-wrap:wrap; }
         .bm-legend span { display:flex; align-items:center; gap:7px; font-size:11px; color:var(--bm-color-text-soft); }
         .bm-sw { width:11px; height:11px; border-radius:3px; flex-shrink:0; }
@@ -297,7 +297,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-recipe { display:flex; gap:10px; align-items:baseline; padding:5px 0; border-bottom:1px solid var(--bm-color-border-subtle); }
         .bm-recipe code { font-family:var(--bm-font-mono); font-size:11px; color:var(--bm-color-accent); min-width:140px; }
         .bm-recipe span { font-size:11px; color:var(--bm-color-text-muted); }
-        .bm-pill { display:inline-flex; align-items:center; gap:6px; font-size:11px; padding:5px 9px; border-radius:6px; cursor:pointer; transition:var(--bm-transition-fast); }
+        .bm-pill { display:inline-flex; align-items:center; gap:6px; font-size:11px; padding:5px 9px; border-radius:var(--bm-radius-md); cursor:pointer; transition:var(--bm-transition-fast); }
         .bm-pill .bm-pico { width:14px; height:14px; display:flex; } .bm-pill .bm-pico svg { width:14px; height:14px; }
         .bm-pill-on { background:var(--bm-color-accent-soft); border:1px solid var(--bm-color-accent); color:var(--bm-color-accent); }
         .bm-pill-off { background:var(--bm-color-bg); border:1px dashed var(--bm-color-border); color:var(--bm-color-text-muted); }
@@ -312,6 +312,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-count { font-size:11px; color:var(--bm-color-text-muted); }
         .bm-count b { color:var(--bm-color-accent); font-weight:600; }
         .bm-save-btn { background:var(--bm-color-accent); color:#fff; border:none; padding:8px 16px; border-radius:var(--bm-radius-sm); cursor:pointer; font-size:12px; font-weight:600; letter-spacing:.3px; transition:var(--bm-transition-normal); }
+        .bm-save-btn.bm-dirty::before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:currentColor; margin-right:7px; vertical-align:middle; opacity:.75; }
         .bm-save-btn:hover { background:var(--bm-color-accent-hover); }
         .bm-topbar-icon { cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 12px; color:var(--bm-color-text-muted); transition:var(--bm-transition-normal); }
         .bm-topbar-icon:hover { color:var(--bm-color-text); }
@@ -319,7 +320,7 @@ function bricksmate_builder_ui_and_modal() {
         /* design polish */
         .bm-list, .bm-detail { scrollbar-width: thin; scrollbar-color: #3a3a3a transparent; }
         .bm-list::-webkit-scrollbar, .bm-detail::-webkit-scrollbar { width:6px; }
-        .bm-list::-webkit-scrollbar-thumb, .bm-detail::-webkit-scrollbar-thumb { background:#3a3a3a; border-radius:6px; }
+        .bm-list::-webkit-scrollbar-thumb, .bm-detail::-webkit-scrollbar-thumb { background:#3a3a3a; border-radius:var(--bm-radius-md); }
         .bm-list::-webkit-scrollbar-track, .bm-detail::-webkit-scrollbar-track { background:transparent; }
         .bm-item.bm-sel { background:rgba(117,92,245,.10); border-color:transparent; }
         .bm-item.bm-sel .bm-name { font-weight:500; }
@@ -342,7 +343,7 @@ function bricksmate_builder_ui_and_modal() {
         .bm-ex-arrow { color:#5a5a5a; padding-bottom:1px; }
         /* tree-style examples (BEM, HTML Tags, Expand Children) */
         .bm-tree { display:flex; flex-direction:column; gap:4px; font-family:var(--bm-font-mono); font-size:12px; }
-        .bm-tree-row { position:relative; overflow:hidden; display:flex; align-items:center; gap:8px; padding:6px 9px; border:1px solid #2a2a2a; border-radius:5px; background:#161616; }
+        .bm-tree-row { position:relative; overflow:hidden; display:flex; align-items:center; gap:8px; padding:6px 9px; border:1px solid var(--bm-color-border-subtle); border-radius:5px; background:#161616; }
         .bm-tree-i { width:14px; height:14px; flex-shrink:0; color:var(--bm-color-text-muted); display:flex; }
         .bm-tree-i svg { width:14px; height:14px; display:block; }
         .bm-tree-chev { width:12px; flex-shrink:0; color:var(--bm-color-text-muted); }
@@ -355,13 +356,13 @@ function bricksmate_builder_ui_and_modal() {
         .bm-tree-expand { margin-left:auto; color:var(--bm-color-accent); display:flex; }
         .bm-tree-expand svg { width:13px; height:13px; display:block; }
         /* Export ID → Class example (Bricks action rail) */
-        .bm-xb-field { display:flex; align-items:center; gap:8px; border:1px solid var(--bm-color-border); border-radius:6px; padding:7px 9px; background:var(--bm-color-bg); }
+        .bm-xb-field { display:flex; align-items:center; gap:8px; border:1px solid var(--bm-color-border); border-radius:var(--bm-radius-md); padding:7px 9px; background:var(--bm-color-bg); }
         .bm-xb-chip { font-family:var(--bm-font-mono); font-size:11px; font-weight:600; padding:4px 9px; border-radius:5px; background:var(--bm-color-accent); color:#fff; }
         .bm-xb-acts { margin-left:auto; display:flex; align-items:center; gap:9px; color:var(--bm-color-text-muted); }
         .bm-xb-acts svg { width:13px; height:13px; }
         .bm-xb-b { width:24px; height:24px; border-radius:5px; background:var(--bm-color-accent); color:#fff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; font-family:Georgia,serif; }
         .bm-xb-rail { align-self:flex-end; display:flex; flex-direction:column; gap:4px; background:var(--bm-color-bg); border:1px solid var(--bm-color-border); border-radius:8px; padding:6px; box-shadow:var(--bm-shadow-dropdown); }
-        .bm-xb-cell { position:relative; width:30px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:6px; color:var(--bm-color-text-muted); }
+        .bm-xb-cell { position:relative; width:30px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:var(--bm-radius-md); color:var(--bm-color-text-muted); }
         .bm-xb-cell svg { width:15px; height:15px; }
         .bm-xb-on { background:var(--bm-color-accent-soft); color:var(--bm-color-accent-text); }
         .bm-xb-tip { position:absolute; right:100%; top:50%; transform:translateY(-50%); margin-right:9px; display:flex; align-items:center; gap:6px; background:#0a0a0a; border:1px solid var(--bm-color-border-subtle); border-radius:5px; padding:4px 9px; font-size:10px; color:var(--bm-color-text); font-family:var(--bm-font-ui); white-space:nowrap; }
@@ -491,10 +492,13 @@ function bricksmate_builder_ui_and_modal() {
         function render() { renderList(); renderDetail(); }
 
         const bmSaveBtn = document.getElementById('bm-save-settings');
+        // Unsaved-changes cue: mark the Save button once the user changes anything.
+        let bmDirty = false;
+        function bmSetDirty() { if (!bmDirty) { bmDirty = true; bmSaveBtn.classList.add('bm-dirty'); } }
 
         function toggleKey(key) {
             const m = M.find(x => x.key === key);
-            if (m) { m.enabled = !m.enabled; render(); }
+            if (m) { m.enabled = !m.enabled; bmSetDirty(); render(); }
         }
 
         listEl.addEventListener('click', (e) => {
@@ -526,9 +530,9 @@ function bricksmate_builder_ui_and_modal() {
         });
         detEl.addEventListener('click', (e) => {
             const rm = e.target.closest('[data-rm]');
-            if (rm) { sbActive = sbActive.filter(n => n !== rm.dataset.rm); renderDetail(); return; }
+            if (rm) { sbActive = sbActive.filter(n => n !== rm.dataset.rm); bmSetDirty(); renderDetail(); return; }
             const ad = e.target.closest('[data-add]');
-            if (ad) { sbActive.push(ad.dataset.add); renderDetail(); }
+            if (ad) { sbActive.push(ad.dataset.add); bmSetDirty(); renderDetail(); }
         });
 
         // Drag to reorder the active Sidebar Shortcuts rail.
@@ -554,23 +558,24 @@ function bricksmate_builder_ui_and_modal() {
             const toIdx = sbActive.indexOf(target);
             sbActive.splice(toIdx, 0, dragName); // insert before the target chip
             dragName = null;
+            bmSetDirty();
             renderDetail();
         });
         function bmFocusChip(n) { const el = detEl.querySelector('[data-name="' + n + '"]') || detEl.querySelector('[data-add="' + n + '"]'); if (el) el.focus(); }
         detEl.addEventListener('keydown', (e) => {
             const add = e.target.closest('[data-add]');
-            if (add && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); sbActive.push(add.dataset.add); renderDetail(); bmFocusChip(add.dataset.add); return; }
+            if (add && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); sbActive.push(add.dataset.add); bmSetDirty(); renderDetail(); bmFocusChip(add.dataset.add); return; }
             const pill = e.target.closest('[data-name]');
             if (!pill) return;
             const name = pill.dataset.name;
-            if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); sbActive = sbActive.filter(x => x !== name); renderDetail(); return; }
+            if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); sbActive = sbActive.filter(x => x !== name); bmSetDirty(); renderDetail(); return; }
             if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'ArrowDown' || e.key === 'ArrowRight') {
                 e.preventDefault();
                 const i = sbActive.indexOf(name);
                 const j = i + ((e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 1);
                 if (j < 0 || j >= sbActive.length) return;
                 sbActive.splice(i, 1); sbActive.splice(j, 0, name);
-                renderDetail(); bmFocusChip(name);
+                bmSetDirty(); renderDetail(); bmFocusChip(name);
             }
         });
 

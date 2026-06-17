@@ -25,7 +25,7 @@
   /* ── Color: texto ───────────────────────────────────────────────────── */
   --bm-color-text:          #fafafa; /* texto principal (DS text) */
   --bm-color-text-soft:     #b3b3b3; /* texto secundario (DS text-2) */
-  --bm-color-text-muted:    #808080; /* etiquetas / iconos inactivos (DS text-3) */
+  --bm-color-text-muted:    #969696; /* etiquetas / iconos tenues (subido de #808080 para AA ~4.5:1 en superficies oscuras) */
 
   /* ── Color: acento ──────────────────────────────────────────────────── */
   --bm-color-accent:        #765df5; /* morado de marca (DS accent) */
