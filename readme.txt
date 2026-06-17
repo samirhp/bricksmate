@@ -4,7 +4,7 @@ Tags: bricks, bricks builder, bem, css, design system, page builder
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,10 @@ BricksMate checks its GitHub repository and offers updates straight from the
 WordPress Plugins screen, like any other plugin.
 
 == Changelog ==
+
+= 2.0.3 =
+* Settings panel design polish: subtler active highlight, thin scrollbars, detail-title divider, accent dot on section labels, and the active-module counter as a chip.
+* Per-module examples redesigned with one consistent visual language (unified element-tree style for BEM, HTML Tags, Expand Children and Style Indicators; class-field preview for Auto-Select Class).
 
 = 2.0.2 =
 * Fixed: in the BEM Generator, the action dropdown (rename / create new & remove old, etc.) now appears only when the element already has CSS classes, not when creating classes for the first time.

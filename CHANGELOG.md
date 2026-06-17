@@ -2,6 +2,12 @@
 
 All notable changes to BricksMate are documented in this file.
 
+## v2.0.3
+
+### Changed
+- Settings panel design polish: subtler active-module highlight, thin themed scrollbars, a divider under the detail title, an accent dot on the section label, and the active-module counter shown as a chip.
+- Redesigned the per-module examples with one consistent visual language: BEM, HTML Tags, Expand Children and Style Indicators now use a unified element-tree style, and Auto-Select Class shows a class-field preview.
+
 ## v2.0.2
 
 ### Fixed
